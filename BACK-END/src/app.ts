@@ -2,8 +2,8 @@ import express from "express";
 import "dotenv/config";
 import cors from "cors";
 import morgan from "morgan";
-import usersRouter from "./routes/user.routes";
 import dataBase from "./config/database";
+import apiRoutes from "./routes/index"
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -14,7 +14,8 @@ app.use(cors());
 app.use(morgan("dev"));
 
 // Rutas
-app.use("/user", usersRouter);
+app.use("/api", apiRoutes);
+
 
 // Base de datos
 dataBase();
