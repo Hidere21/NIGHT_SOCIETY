@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+
+
+*{
+ margin: 0;
+ padding: 0;
+ outline: none;
+ border: none;
+ text-decoration: none;
+ box-sizing: border-box;
+ font-family: "Poppins", sans-serif;
+}
+
+.my-nav ul{
+    padding-left: 0;
+}
+.my-nav li{
+    list-style: none;
+    content: initial;
+}
+.my-nav li a{
+    text-decoration: none;
+}
+.my-nav{
+ position: absolute;
+ top: 0;
+ bottom: 0;
+ height: 100%;
+ left: 0;
+ background: #190F40;
+ width: 90px;
+ overflow: hidden;
+ transition: width 0.2s linear;
+ box-shadow: 0 20px 35px rgba(0, 0, 0,0.1);
+ z-index: 100;
+}
+.logo{
+ text-align: center;
+ display:flex;
+ transition:all 0.5s ease; 
+ margin: 10px 0 0 0;
+ padding: 0%;
+ margin-left: -25px;
+}
+.logo img{
+ width: 40px;
+ height: 40px;
+ border-radius: 50%;
+}
+.logo span{
+    font-weight: bold;
+    padding-left: 20px;
+    font-size: 15px;
+    text-transform: uppercase;
+    margin-bottom: 2em;
+}
+.my-nav a{
+    position: relative;
+    color: white;
+    font-size: 14px;
+    display: table;
+    width: 300px;
+    padding: 10px;
+}
+.fas{
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 14px;
+    font-size: 20px;
+    text-align: center;
+}
+.obj-sidebar{
+    position: relative;
+    top: 12px;
+    margin-left: 10px;
+}
+.my-nav li a:hover{
+    background: #571673;
+}
+nav:hover{
+    width: 280px;
+    transition: all 0.5s;
+}
+
+.salir{
+  position: absolute;
+  bottom: 0;  
+}
+
+.container_icons {
+    background:none
+}
+
+.filaMensaje:hover{
+    background-color: whitesmoke;
+}
+
+  
+  .messages {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .message {
+    border-radius: 20px;
+    padding: 8px 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+    align-items: flex-start;
+    margin-right: 25%;
+    background-color: #571673;
+    color: white;
+    position: relative;
+  }
+
+
+  .content {
+    text-align: center;
+  }
+  .content h1 {
+    font-family: 'Sansita', sans-serif;
+    letter-spacing: 1px;
+    font-size: 50px;
+    color: #282828;
+    margin-bottom: 10px;
+  }
+  .content  i {
+    color: #FFC107;
+  }
+  .content span {
+    position: relative;
+    display: inline-block;
+  }
+  .content  span:before, .content  span:after {
+    position: absolute;
+    content: "";
+    background-color: #282828;
+    width: 40px;
+    height: 2px;
+    top: 40%;
+  }
+  .content  span:before {
+    left: -45px;
+  }
+  .content  span:after {
+    right: -45px;
+  }
+  .content p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+  .wrapper {
+    position: relative;
+    display: inline-block;
+    border: none;
+    font-size: 14px;
+    margin: 50px auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .wrapper input {
+    border: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    opacity: 0;
+  }
+  
+  .wrapper label {
+    cursor: pointer;
+    position: relative;
+    float: right;
+    color: #C8C8C8;
+  }
+  
+  @media (max-width: 660px) {
+    .wrapper label:before {
+        margin: 3px;
+        content: "\f005";
+        font-family: FontAwesome;
+        display: inline-block;
+        font-size: 2em;
+        color: #ccc;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+  }
+
+  @media (min-width: 661px) {
+    .wrapper label:before {
+        margin: 5px;
+        content: "\f005";
+        font-family: FontAwesome;
+        display: inline-block;
+        font-size: 5em;
+        color: #ccc;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+  }
+  
+  .wrapper input:checked ~ label:before {
+    color: #FFC107;
+  }
+  
+  .wrapper label:hover ~ label:before {
+    color: #ffdb70;
+  }
+  
+  .wrapper label:hover:before {
+    color: #FFC107;
+  }
+
+  @media (min-width: 1001px) {
+    #mainContent{
+        margin-left: 15%;
+    }
+    
+  }
+  @media (max-width: 1000px) {
+    #mainContent{
+        margin-left: auto;
+    }
+    
+  }
+  
+  .btnEnviar{
+    background-color: #190F40;
+    color: white;
+  }
+
+  .btnEnviar:hover{
+    background-color: #571673;
+    color: white;
+  }
