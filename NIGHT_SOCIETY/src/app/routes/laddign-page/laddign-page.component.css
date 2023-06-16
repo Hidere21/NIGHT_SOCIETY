@@ -175,7 +175,7 @@ span{
     width: 200px;
     text-align: center;
     background-color: #5306b3;
-    padding: 15px 15px;
+    padding: 8px 15px;
     color: white !important;
     border-radius: 4rem;
     box-shadow: 0 0 1rem #5306b3;
@@ -201,15 +201,15 @@ span{
     text-align: center;
     font-size: 4.5rem;
 }
-.about-contenido h2{
+.que-contenido h2{
+    font-size: 2.4rem;
     text-align: left;
     line-height: 1.2;
 }
-.about-contenido h3{
-    font-size: 2.6rem;
-}
-.about-contenido p{
-    font-size: 1.6rem;
+
+.que-contenido p{
+    text-align: justify;
+    font-size: 1.5rem;
     margin: 2rem 0 3rem;
 }
 
@@ -229,15 +229,15 @@ span{
     text-align: center;
     font-size: 4.5rem;
 }
-.about-contenido h2{
+.usar-contenido h2{
+    font-size: 2.4rem;
     text-align: left;
     line-height: 1.2;
 }
-.about-contenido h3{
-    font-size: 2.6rem;
-}
-.about-contenido p{
-    font-size: 1.6rem;
+
+.usar-contenido p{
+    text-align: justify;
+    font-size: 1.5rem;
     margin: 2rem 0 3rem;
 }
 

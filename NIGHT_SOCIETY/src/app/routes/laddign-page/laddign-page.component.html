@@ -7,9 +7,9 @@
   <i class="bx bx-menu" id="menu-icono"></i>
   <nav class="navbar">
     <a (click)="scrollTo(Inicio)" class="active">Inicio</a>
-    <a (click)="scrollquees(que_es)">¿Qué es?</a>
-    <a href="#porque-usar">¿Por qué usar?</a>
-    <a href="#Contacto" class="bt">Iniciar Sesión</a>
+    <a (click)="scrollTo(que_es)">¿Qué es?</a>
+    <a (click)="scrollTo(porque_usar)">¿Por qué usar?</a>
+    <a href="#" class="bt">Iniciar Sesión</a>
   </nav>
 </header>
 
@@ -38,32 +38,33 @@
   <div class="about-img">
     <img src="../../../assets/7298392-removebg-preview.png" alt="" />
   </div>
-  <div class="about-contenido">
-    <h2 class="heading">¿<span>Qué</span> es?</h2>
+  <div class="que-contenido">
+    <h2 class="heading">¿Qué es<span> Night Society</span>?</h2>
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-      perspiciatis explicabo ut molestias. Nulla consequuntur eaque doloribus
-      blanditiis quaerat officia? Tempora sunt, pariatur facilis odio excepturi
-      perspiciatis dignissimos eligendi doloribus, provident deleniti iste et?
-      Itaque beatae sunt praesentium aspernatur velit quisquam molestias
-      veritatis quidem inventore eveniet?
+      Night Society es una red social la cual te permitirá hacer amigos de forma rápida
+      y segura, podrás hacer publicaciones e interactuar con ellas. Podrás publicar eventos 
+      y hacer búsqueda del tipo de evento al que te gustaría asistir (dancehall, guaracha, techno, etc..)
+      y así mismo podrás calificar las diversas discotecas de Bogotá.
     </p>
   </div>
 </section>
 
-<section class="porque-usar" #que_es>
+<section class="porque-usar" #porque_usar>
   <div class="about-img">
     <img src="../../../assets/3424790-removebg-preview.png" alt="" />
   </div>
-  <div class="about-contenido">
-    <h2 class="heading">¿Por<span> qué usar</span>?</h2>
+  <div class="usar-contenido">
+    <h2 class="heading">¿Por qué usar <span>Night Society</span>?</h2>
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-      perspiciatis explicabo ut molestias. Nulla consequuntur eaque doloribus
-      blanditiis quaerat officia? Tempora sunt, pariatur facilis odio excepturi
-      perspiciatis dignissimos eligendi doloribus, provident deleniti iste et?
-      Itaque beatae sunt praesentium aspernatur velit quisquam molestias
-      veritatis quidem inventore eveniet?
+      Night Society te permitirá compartir tus pensamientos fiesteros de forma
+      libre, así mismo podrás encontrar personas con tus mismos gustos e interactuar con ellos.
+  </p>
+    <p>
+      Night Society está diseñado para personas mayores de 18 años, que les guste estar rodeados de 
+      excelente ambiente acompañado de música y baile, aquí podrás hacer públicos tus 
+      eventos o asistir a estos, los cuales podrán llegar
+       a un sinfín de personas tales como creadores de contenido, todo tipo de géneros y hasta 
+       grandes empresarios.
     </p>
   </div>
 </section>
@@ -74,6 +75,6 @@
         <p>Copyright &copy; 2023< By Night Society | All Rights Reserved. | <a href="#">Politicas de privacidad</a></p>
       </div>
       <div class="footer-iconTop">
-        <a href="#Inicio"><i class="fa-solid fa-arrow-up"></i></a>
+        <a (click)="scrollTo(Inicio)"><i class="fa-solid fa-arrow-up"></i></a>
       </div>
     </footer>
