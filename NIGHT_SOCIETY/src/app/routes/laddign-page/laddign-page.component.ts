@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class LaddignPageComponent {
 
+
+  scrollTo(elem: HTMLElement){
+    elem.scrollIntoView({behavior: 'smooth'})
+  }
+  scrollquees(elem: HTMLElement){
+    elem.scrollIntoView({behavior: 'smooth'})
+  }
+
 }
