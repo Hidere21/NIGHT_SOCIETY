@@ -1,1 +1,82 @@
-<p>crear-eventos works!</p>
+
+ 
+<div class="vh-100 d-flex justify-content-center align-items-center">
+    
+    <form class="w-50 row container-crear-evento d-flex justify-content-center align-items-center">
+      <div class=" d-flex justify-content-center icon-craer-evento">
+          <i class="bi bi-calendar-plus-fill"></i>
+     </div>
+      <div class="crear-evento m-auto col-12 d-flex justify-content-center">
+          <h2 class="fw-bold">Crear Evento</h2>   
+      </div>
+  
+      <div class="col-12 col-md-10">
+        <label for="inputext" class="form-label ">Nombre: </label>
+        <input type="text" class="form-control" id="inputext" placeholder="Nombre evento" required>
+      </div>
+     
+      <div class="col-12 col-md-10">
+        <label for="inputAddress" class="form-label">Dirección: </label>
+        <input type="text" class="form-control" id="inputAddress" placeholder="Dirección" required>
+      </div>
+  
+      <div class="col-12 col-md-5">
+        <label for="inputDate" class="form-label">Fecha Desde: </label>
+        <input type="date" class="form-control" id="inputDate" placeholder="" required>
+      </div>
+
+      <div class="col-12 col-md-5">
+        <label for="inputDate" class="form-label">Fecha Hasta: </label>
+        <input type="date" class="form-control" id="inputDate" placeholder="" required>
+      </div>
+  
+      <div class="col-12 col-md-5">
+          <label for="inputTime" class="form-label">Hora: </label>
+          <input type="time" class="form-control" id="inputTime" placeholder="" required>
+      </div>
+  
+      <div class="mb-3 col-12 col-md-10">
+          <label for="formFileMultiple" class="form-label">Adjuntar archivos:</label>
+          <input class="form-control" type="file" id="formFileMultiple" multiple required>
+        </div>
+  
+      <div class="col-12 col-md-10">
+          <label for="inputComentarios" class="form-label">Descripción: </label>
+         <textarea id="imputcomentarios" class="form-control" name="Descripción" placeholder="Descripción" required></textarea>
+      </div>
+         
+      <div class="col-12 d-flex justify-content-center ">
+        <!-- Button trigger modal -->
+          <button type="submit" class="btn btn-primary mt-3 mb-4 w-25" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              Crear  
+          </button>
+    
+          <!-- Modal -->
+          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog">
+              <div class="modal-content ">
+                  <div class="modal-header conf-crear-evento ">
+                  <h1 class="modal-title fs-5 fw-bold " id="staticBackdropLabel">Seguro desea crear el evento</h1>
+                  <button type="button" class="btn-close bg-white conf-crear-evento" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body text-center fw-light">
+                  Una vez creado el evento, sera publicado. <br>
+                  Desea Continuar ?
+                  </div>
+                  <div class="modal-footer conf-crear-evento">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">NO</button>
+                      <a href="eventos.html" rel="noopener noreferrer">
+                  <button type="button" class="btn btn-primary fw-bold"> SI </button>
+                      </a>
+                  </div>
+              </div>
+              </div>
+          </div>
+      </div>
+    </form>
+  
+  </div>
+  
+  
+  
+  
