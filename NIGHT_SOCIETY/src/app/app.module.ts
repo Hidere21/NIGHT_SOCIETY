@@ -12,6 +12,11 @@ import { HomeComponent } from './routes/home/home.component';
 import { PoliticasComponent } from './routes/politicas/politicas.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ButtonComponent } from './components/button/button.component';
+<<<<<<< HEAD
+=======
+
+import { LaddignPageComponent } from './routes/laddign-page/laddign-page.component';
+>>>>>>> laddig-page
 
 @NgModule({
   declarations: [
@@ -24,7 +29,12 @@ import { ButtonComponent } from './components/button/button.component';
     HomeComponent,
     PoliticasComponent,
     NavbarComponent,
+<<<<<<< HEAD
     ButtonComponent
+=======
+    ButtonComponent,
+    LaddignPageComponent
+>>>>>>> laddig-page
   ],
   imports: [
     BrowserModule,

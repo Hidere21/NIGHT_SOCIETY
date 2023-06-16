@@ -1,0 +1,80 @@
+<header class="header">
+  <a href="" class="logo">
+    <img src="../../../assets/logo-Night-removebg-preview.png" alt="" />NIGHT
+    SOCIETY</a
+  >
+
+  <i class="bx bx-menu" id="menu-icono"></i>
+  <nav class="navbar">
+    <a (click)="scrollTo(Inicio)" class="active">Inicio</a>
+    <a (click)="scrollTo(que_es)">¿Qué es?</a>
+    <a (click)="scrollTo(porque_usar)">¿Por qué usar?</a>
+    <a href="#" class="bt">Iniciar Sesión</a>
+  </nav>
+</header>
+
+<!-- diseño sección inicio -->
+<section class="inicio" #Inicio>
+  <div class="home-contenido">
+    <h3>Hola, esta es tu página para rumbas</h3>
+    <!-- <h1>Night Society</h1> -->
+    <h3>comparte<span> con amigos</span></h3>
+    <p>Where the magic of the night comes alives</p>
+    <div class="redes-sociales">
+      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+    <a href="#" class="btn">Registrarse</a>
+  </div>
+  <div class="home-img">
+    <img src="../../../assets/animation-ladding.png" alt="" />
+  </div>
+</section>
+
+<!-- sección por que usar -->
+
+<section class="que_es" #que_es>
+  <div class="about-img">
+    <img src="../../../assets/7298392-removebg-preview.png" alt="" />
+  </div>
+  <div class="que-contenido">
+    <h2 class="heading">¿Qué es<span> Night Society</span>?</h2>
+    <p>
+      Night Society es una red social la cual te permitirá hacer amigos de forma rápida
+      y segura, podrás hacer publicaciones e interactuar con ellas. Podrás publicar eventos 
+      y hacer búsqueda del tipo de evento al que te gustaría asistir (dancehall, guaracha, techno, etc..)
+      y así mismo podrás calificar las diversas discotecas de Bogotá.
+    </p>
+  </div>
+</section>
+
+<section class="porque-usar" #porque_usar>
+  <div class="about-img">
+    <img src="../../../assets/3424790-removebg-preview.png" alt="" />
+  </div>
+  <div class="usar-contenido">
+    <h2 class="heading">¿Por qué usar <span>Night Society</span>?</h2>
+    <p>
+      Night Society te permitirá compartir tus pensamientos fiesteros de forma
+      libre, así mismo podrás encontrar personas con tus mismos gustos e interactuar con ellos.
+  </p>
+    <p>
+      Night Society está diseñado para personas mayores de 18 años, que les guste estar rodeados de 
+      excelente ambiente acompañado de música y baile, aquí podrás hacer públicos tus 
+      eventos o asistir a estos, los cuales podrán llegar
+       a un sinfín de personas tales como creadores de contenido, todo tipo de géneros y hasta 
+       grandes empresarios.
+    </p>
+  </div>
+</section>
+
+    <!-- diseño foooter -->
+    <footer class="footer">
+      <div class="footer-text">
+        <p>Copyright &copy; 2023< By Night Society | All Rights Reserved. | <a href="#">Politicas de privacidad</a></p>
+      </div>
+      <div class="footer-iconTop">
+        <a (click)="scrollTo(Inicio)"><i class="fa-solid fa-arrow-up"></i></a>
+      </div>
+    </footer>
