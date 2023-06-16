@@ -7,7 +7,8 @@ const userSchema = new Schema<User>({
     email: { type: String, required: true },
     password: { type: String, required: true },
     friends: { type: [String], required: true, default: [] },
-    accounts: { type: [String], required: true, default: [] }
+    accounts: { type: [String], required: true, default: [] },
+    userImage: { type: String, default: ''}
 
 }, {
     timestamps: true,
