@@ -2,7 +2,7 @@
  
 <div class="vh-100 d-flex justify-content-center align-items-center">
     
-    <form class="w-50 row container-crear-evento d-flex justify-content-center align-items-center">
+    <form #eventForm="ngForm" (ngSubmit)="createOrUpdateEvent(eventForm)" class="w-50 row container-crear-evento d-flex justify-content-center align-items-center">
       <div class=" d-flex justify-content-center icon-craer-evento">
           <i class="bi bi-calendar-plus-fill"></i>
      </div>
@@ -12,37 +12,37 @@
   
       <div class="col-12 col-md-10">
         <label for="inputext" class="form-label ">Nombre: </label>
-        <input type="text" class="form-control" id="inputext" placeholder="Nombre evento" required>
+        <input type="text" id="inputext" class="form-control" placeholder="Nombre evento" required="" name="name" #name="ngModel" [(ngModel)]="eventService.eventToCreate.name" >
       </div>
      
       <div class="col-12 col-md-10">
         <label for="inputAddress" class="form-label">Dirección: </label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="Dirección" required>
+        <input type="text" id="inputAddress" class="form-control" placeholder="Dirección" required="" name="address" #address="ngModel" [(ngModel)]="eventService.eventToCreate.address"  >
       </div>
   
       <div class="col-12 col-md-5">
         <label for="inputDate" class="form-label">Fecha Desde: </label>
-        <input type="date" class="form-control" id="inputDate" placeholder="" required>
+        <input type="date" id="inputDate" class="form-control" placeholder="" required="" name="date_from" #date_from="ngModel" [(ngModel)]="eventService.eventToCreate.date_from" >
       </div>
 
       <div class="col-12 col-md-5">
         <label for="inputDate" class="form-label">Fecha Hasta: </label>
-        <input type="date" class="form-control" id="inputDate" placeholder="" required>
+        <input type="date" id="inputDate" class="form-control" placeholder="" required="" name="date_to" #date_to="ngModel" [(ngModel)]="eventService.eventToCreate.date_to" >
       </div>
   
       <div class="col-12 col-md-5">
           <label for="inputTime" class="form-label">Hora: </label>
-          <input type="time" class="form-control" id="inputTime" placeholder="" required>
+          <input type="time" id="formFileMultiple" class="form-control" placeholder="" required="" name="hour" #hour="ngModel" [(ngModel)]="eventService.eventToCreate.hour" >
       </div>
-  
+<!--   
       <div class="mb-3 col-12 col-md-10">
           <label for="formFileMultiple" class="form-label">Adjuntar archivos:</label>
-          <input class="form-control" type="file" id="formFileMultiple" multiple required>
+          <input class="form-control" id="formFileMultiple" type="file" multiple required="" name="images" #images="ngModel" [(ngModel)]="eventService.eventToCreate.images" >
         </div>
-  
+   -->
       <div class="col-12 col-md-10">
           <label for="inputComentarios" class="form-label">Descripción: </label>
-         <textarea id="imputcomentarios" class="form-control" name="Descripción" placeholder="Descripción" required></textarea>
+         <textarea class="form-control" id="imputcomentarios" placeholder="Descripción" required="" name="description" #description="ngModel" [(ngModel)]="eventService.eventToCreate.description" ></textarea>
       </div>
          
       <div class="col-12 d-flex justify-content-center ">

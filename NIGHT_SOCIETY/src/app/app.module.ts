@@ -12,11 +12,10 @@ import { HomeComponent } from './routes/home/home.component';
 import { PoliticasComponent } from './routes/politicas/politicas.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ButtonComponent } from './components/button/button.component';
-<<<<<<< HEAD
-=======
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule} from '@angular/forms'
 
 import { LaddignPageComponent } from './routes/laddign-page/laddign-page.component';
->>>>>>> laddig-page
 
 @NgModule({
   declarations: [
@@ -29,16 +28,14 @@ import { LaddignPageComponent } from './routes/laddign-page/laddign-page.compone
     HomeComponent,
     PoliticasComponent,
     NavbarComponent,
-<<<<<<< HEAD
-    ButtonComponent
-=======
     ButtonComponent,
     LaddignPageComponent
->>>>>>> laddig-page
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
