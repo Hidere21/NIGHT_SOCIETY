@@ -13,9 +13,15 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ButtonComponent } from './components/button/button.component';
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
 // Modulo de amigos
 import { AmigosModule } from './routes/amigos/amigos.module';
 >>>>>>> features/friends
+=======
+
+import { LaddignPageComponent } from './routes/laddign-page/laddign-page.component';
+>>>>>>> laddig-page
+>>>>>>> 36157695095552e1b512b93d64c5b694dae40c6e
 
 @NgModule({
   declarations: [
@@ -27,7 +33,12 @@ import { AmigosModule } from './routes/amigos/amigos.module';
     HomeComponent,
     PoliticasComponent,
     NavbarComponent,
+<<<<<<< HEAD
     ButtonComponent
+=======
+    ButtonComponent,
+    LaddignPageComponent
+>>>>>>> laddig-page
   ],
   imports: [
     BrowserModule,
