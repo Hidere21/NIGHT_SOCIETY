@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 import { HomeComponent } from './page/home/home.component';
 import { FriendsComponent } from './page/friends/friends.component';
@@ -21,6 +22,7 @@ import { CardContactComponent } from './components/card-contact/card-contact.com
   ],
   imports: [
     CommonModule,
+    HttpClientModule
   ],
   exports: [
     HomeComponent,
