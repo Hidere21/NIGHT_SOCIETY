@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { EventosComponent } from './routes/eventos/eventos.component';
 import { CrearEventosComponent } from './routes/crear-eventos/crear-eventos.component';
 import { CalificarComponent } from './routes/calificar/calificar.component';
-import { AmigosComponent } from './routes/amigos/amigos.component';
 import { PerfilComponent } from './routes/perfil/perfil.component';
 import { HomeComponent } from './routes/home/home.component';
 import { PoliticasComponent } from './routes/politicas/politicas.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ButtonComponent } from './components/button/button.component';
+<<<<<<< HEAD
+=======
+// Modulo de amigos
+import { AmigosModule } from './routes/amigos/amigos.module';
+>>>>>>> features/friends
 
 @NgModule({
   declarations: [
@@ -19,7 +23,6 @@ import { ButtonComponent } from './components/button/button.component';
     EventosComponent,
     CrearEventosComponent,
     CalificarComponent,
-    AmigosComponent,
     PerfilComponent,
     HomeComponent,
     PoliticasComponent,
@@ -28,7 +31,8 @@ import { ButtonComponent } from './components/button/button.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AmigosModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
