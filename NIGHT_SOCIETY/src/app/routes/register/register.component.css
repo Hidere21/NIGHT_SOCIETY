@@ -27,13 +27,21 @@ svg{
     border-radius: 15px;
     padding: 15px;
 }
+.title img{
+    width: 500px;
+    height: 350px;
+    position: absolute;
+    top: 7%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 .input-names, .in{
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 20px;
+    padding: 8px; 
 }
 .input-names input[type = "text"],
 .input-names input[type = "email"],
