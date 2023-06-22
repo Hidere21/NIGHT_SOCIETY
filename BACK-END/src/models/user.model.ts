@@ -7,7 +7,7 @@ const userSchema = new Schema<User>(
     lastName: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
-    friends: { type: [String], required: true, default: [] },
+    friends: { type: [String], required: false, default: [] },
     accounts: {
         type: [
           {

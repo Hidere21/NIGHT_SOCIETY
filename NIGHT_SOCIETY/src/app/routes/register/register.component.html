@@ -58,24 +58,24 @@
         <img src="../../../assets/lg.png" alt="">
     </div>
 
-    <form class="form-c">
+    <form class="form-c" #userForm="ngForm" (ngSubmit)="createUser(userForm)">
         <h1>Register Form</h1>
         <div class="input-names">
             <div class="in">
-                <input type="text" placeholder="Nombres">
+                <input type="text" name="name" #name="ngModel" [(ngModel)]="user.userToCreate.name" placeholder="Nombres">
             </div>
             <div class="in">
-                <input type="text" placeholder="Apellidos">
+                <input type="text" name="lastName" #lastName="ngModel" [(ngModel)]="user.userToCreate.lastName" placeholder="Apellidos">
             </div>
             <div class="in">
-                <input type="email" placeholder="Email">
+                <input type="email" name="email" #email="ngModel" [(ngModel)]="user.userToCreate.email" placeholder="Email">
             </div>
             <div class="in">
-                <input type="password" placeholder="Password">
+                <input type="password" name="password" #password="ngModel" [(ngModel)]="user.userToCreate.password" placeholder="Password">
             </div>
         </div>
         <div class="links">
-            <button class="bt">Register</button>
+            <button class="bt" type="submit">Register</button>
             <a href="#">¿Ya tienes cuenta?</a>
         </div>
     </form>
