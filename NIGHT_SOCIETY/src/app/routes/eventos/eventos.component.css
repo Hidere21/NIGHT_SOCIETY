@@ -1,0 +1,114 @@
+ /* style de los eventos */
+  
+  .search-icon{
+    color: #190f40;
+    font-size: 2.3rem;
+  }
+  
+  .search-icon:hover{
+    color: #571673;
+  }
+  
+  /* button Buscar */
+  .btn-primary {
+    background-color: #190f40;
+    border: none;
+  }
+  .btn-primary:hover {
+    background-color: #571673;
+  }
+  
+  .text-titulo-evento{
+    color: #190f40;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2.1rem;
+  }
+  
+  .evento {
+    border-radius: 40px 0 40px 0;
+    background-color: #ddd;
+    box-shadow: 2px 3px 10px 3px #190f40;
+    height: 77vh;
+  }
+  
+  .carousel{
+    max-width: 550px ;
+  }
+  
+  
+  /* alto imagenes evento */
+  .img-banner {
+    height: 35vh;
+  }
+  
+  .text-light-2{
+    color: #190f40;
+    font-size: 0.9rem;
+  }
+  
+  
+  
+  
+  
+  /* iconos sociales */
+  #likes-evento {
+    color: #e61919;
+  }
+  
+  #comet-evento {
+    color: #129325;
+  }
+  
+  .iconos-sociales a {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1px;
+    margin: 10px;
+    border: 3px solid #190f40;
+    border-radius: 50%;
+    background-color: #ddd;
+    transition: all 0.1s ease-in;
+  }
+  
+  .iconos-sociales i {
+    font-size: 2rem;
+    transition: all 0.1s ease-in;
+  }
+  
+  .iconos-sociales .likes:hover {
+    background-color: #e61919; 
+  }
+  #likes-evento:hover{
+    color: #ddd;
+    font-size: 2.5rem;
+  }
+  
+  .iconos-sociales .comentarios:hover {
+    background-color: #129325; 
+  }
+  #comet-evento:hover{
+    color: #ddd;
+    font-size: 2.2rem;
+  }
+  
+  /* Modal */
+  .modal-tit {
+    background-color: #190f40;
+    color: #e3e0e0;
+  }
+  .modal-foot {
+    background-color: #190f40;
+  }
+  .btn-secondary-1{
+    background-color: #571673;
+    color: #e3e0e0;
+    width: 150px;
+  }
+  .btn-secondary-1:hover{
+    background-color: #933db7;
+    color: #e3e0e0;
+  }
+  
