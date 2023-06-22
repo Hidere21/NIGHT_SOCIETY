@@ -6,6 +6,7 @@ export interface Event {
     hour: string;
     images: String;
     description: String;
+    opinions: []
     }
 
 

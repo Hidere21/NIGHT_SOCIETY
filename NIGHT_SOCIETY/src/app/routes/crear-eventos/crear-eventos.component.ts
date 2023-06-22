@@ -42,6 +42,7 @@ export class CrearEventosComponent {
 
     this.eventService.createEvent(data).subscribe((data: any)=>{
       console.log(data)
+      console.log(ErrorEvent)
       alert(data.status > 399 ? data.error.msg : data.msg);
       this.getAllEvent()
     });
@@ -61,10 +62,10 @@ export class CrearEventosComponent {
     //   })
     // }
 
-    updateProduct(event: Event){
-      this.eventService.eventToCreate = event
+    // updateProduct(event: Event){
+    //   this.eventService.eventToCreate = event
 
-    }
+    // }
 
 
 }
