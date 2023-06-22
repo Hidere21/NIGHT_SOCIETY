@@ -195,7 +195,7 @@ span{
     background-color: #dee0e6;
 }
 .que_es img{
-    width: 35vw;
+    width: 130vw;
 }
 .heading{
     text-align: center;
@@ -209,7 +209,7 @@ span{
 
 .que-contenido p{
     text-align: justify;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin: 2rem 0 3rem;
 }
 
@@ -223,7 +223,7 @@ span{
     gap: 2rem;
 }
 .porque-usar img{
-    width: 35vw;
+    width: 150vw;
 }
 .heading{
     text-align: center;
