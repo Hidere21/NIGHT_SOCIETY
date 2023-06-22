@@ -1,0 +1,126 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.main-container{
+  width: 100%;
+  background-color: #ddd;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.container-all{
+  width: 80%;
+  background-color: black;
+  height: 500px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 5px 5px 10px #999;
+}
+.img{
+  width: 50%;
+}
+.img img{
+  width: 100%;
+  height: 500px;
+}
+.form{
+  width: 50%;
+}
+.form{
+  width: 50%;
+  background-color: white;
+  height: 500px;
+}
+.formulario-l{
+  width: 100%;
+  height: 500px;
+}
+
+
+.input-l{
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: cent50;
+  padding: 30px;
+}
+.input-l i{
+  font-size: 22px;
+  color: #190F40;
+}
+
+
+.input-l input[type="email"]{
+  width: 80%;
+  border: none;
+  padding: 8px;
+  border-bottom: 1px solid #190F40;
+  background-color: transparent;
+  outline: none;
+}
+.input-l input[type="password"]{
+  width: 80%;
+  border: none;
+  padding: 8px;
+  border-bottom: 1px solid #190F40;
+  background-color: transparent;
+  outline: none;
+}
+
+
+
+
+.boton a{
+  width: 160px;
+  padding: 8px 10px;
+  border-radius: 20px;
+  background-color: #190F40;
+  border: none;
+}
+.boton a:hover{
+  background-color: #571673;
+}
+
+
+.olv-contra a{
+  text-decoration: none;
+  color: #190F40;
+  font-size: 18px;
+}
+
+
+
+
+@media (max-width:900px) {
+  .boton a{
+      width: 120px;
+      font-size: 14px;
+  }
+  .olv-contra a{
+      font-size: 14px;
+  }
+}
+
+
+@media (max-width:700px) {
+ .form{
+  width: 100%;
+ }
+ .img{
+  width: 0;
+ }
+
+}
+@media (max-width:400px) {
+  .boton a{
+      width: 100px;
+      font-size: 14px;
+  }
+  .olv-contra a{
+      font-size: 14px;
+  }
+
+}
