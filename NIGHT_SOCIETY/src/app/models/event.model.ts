@@ -7,6 +7,7 @@ export class Event{
     images?: String
     description?: String
     _id?:String
+    opinions?: []
 
     constructor(
         name = "",
@@ -16,7 +17,8 @@ export class Event{
         hour = "",
         images = "",
         description = "",
-        _id= ""        
+        _id= "",
+        opinions?: []        
          ){
             this.name = name;
             this.address = address;
@@ -26,6 +28,7 @@ export class Event{
             this.images = images;
             this.description = description
             this._id = _id;
+            this.opinions = opinions
             }
 }
 

@@ -75,7 +75,7 @@ export const updateEvent = async (req: Express.Request, res: Express.Response) =
 };
 
 
-// export const deleteProduct = async (req: Express.Request, res: Express.Response) => {
+// export const deleteEvent = async (req: Express.Request, res: Express.Response) => {
 //   try {
 //     let {_id} = req.params
 

@@ -1,0 +1,20 @@
+<div class="h-48 bg-white border rounded-xl w-96" *ngFor="let friend of friendsService.myFriends">
+    <div class="flex">
+        <div class="md:flex-shrink-0">
+            <img class="object-cover w-full h-48 rounded-r-none rounded-l-xl" src="{{friend.userImage}}"
+                alt="Imagen de ejemplo">
+        </div>
+        <div class="p-7 w-max">
+            <div class="mb-4 text-sm font-bold text-center uppercase text-hoverside">Nigth Society
+            </div>
+            <div>
+                <p class="text-lg font-medium text-center hover:text-xl">{{friend.name}} {{friend.lastName}}</p>
+                <p class="text-gray-500">{{friend.email}}</p>
+            </div>
+            <button
+            (click)="deleteFriends(friend._id)"
+                class="px-2 py-1 text-black border-0 border-black rounded-md bg-sidebar hover:bg-nigthsociety">Eliminar
+            </button>
+        </div>
+    </div>
+</div>

@@ -2,7 +2,7 @@
  
 <div class="vh-100 d-flex justify-content-center align-items-center">
     
-    <form class="w-50 row container-crear-evento d-flex justify-content-center align-items-center">
+    <form #eventForm="ngForm" (ngSubmit)="createOrUpdateEvent(eventForm)" class="w-50 row container-crear-evento d-flex justify-content-center align-items-center">
       <div class=" d-flex justify-content-center icon-craer-evento">
           <i class="bi bi-calendar-plus-fill"></i>
      </div>
@@ -11,48 +11,49 @@
       </div>
   
       <div class="col-12 col-md-10">
+        <input type="text" hidden name="_id" #_id="ngModel" [(ngModel)]="eventService.eventToCreate._id"  />
         <label for="inputext" class="form-label ">Nombre: </label>
-        <input type="text" class="form-control" id="inputext" placeholder="Nombre evento" required>
+        <input type="text" id="inputext" class="form-control" placeholder="Nombre evento" required="" name="name" #name="ngModel" [(ngModel)]="eventService.eventToCreate.name" >
       </div>
      
       <div class="col-12 col-md-10">
         <label for="inputAddress" class="form-label">Dirección: </label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="Dirección" required>
+        <input type="text" id="inputAddress" class="form-control" placeholder="Dirección" required="" name="address" #address="ngModel" [(ngModel)]="eventService.eventToCreate.address"  >
       </div>
   
       <div class="col-12 col-md-5">
-        <label for="inputDate" class="form-label">Fecha Desde: </label>
-        <input type="date" class="form-control" id="inputDate" placeholder="" required>
+        <label for="inputDate1" class="form-label">Fecha Desde: </label>
+        <input type="date" id="inputDate1" class="form-control" required="" name="date_from" #date_from="ngModel" [(ngModel)]="eventService.eventToCreate.date_from" >
       </div>
 
       <div class="col-12 col-md-5">
-        <label for="inputDate" class="form-label">Fecha Hasta: </label>
-        <input type="date" class="form-control" id="inputDate" placeholder="" required>
+        <label for="inputDate2" class="form-label">Fecha Hasta: </label>
+        <input type="date" id="inputDate2" class="form-control" required="" name="date_to" #date_to="ngModel" [(ngModel)]="eventService.eventToCreate.date_to" >
       </div>
   
       <div class="col-12 col-md-5">
-          <label for="inputTime" class="form-label">Hora: </label>
-          <input type="time" class="form-control" id="inputTime" placeholder="" required>
+          <label for="horEvent" class="form-label">Hora: </label>
+          <input type="time" id="horEvent" class="form-control" required="" name="hour" #hour="ngModel" [(ngModel)]="eventService.eventToCreate.hour" >
       </div>
   
       <div class="mb-3 col-12 col-md-10">
-          <label for="formFileMultiple" class="form-label">Adjuntar archivos:</label>
-          <input class="form-control" type="file" id="formFileMultiple" multiple required>
+          <label for="formFileMultiple" class="form-label">Adjuntar imagenes:</label>
+          <input class="form-control" id="formFileMultiple" type="file" multiple required="" name="images" #images="ngModel" [(ngModel)]="eventService.eventToCreate.images" >
         </div>
   
       <div class="col-12 col-md-10">
-          <label for="inputComentarios" class="form-label">Descripción: </label>
-         <textarea id="imputcomentarios" class="form-control" name="Descripción" placeholder="Descripción" required></textarea>
+          <label for="comentariosEvent" class="form-label">Descripción: </label>
+         <textarea class="form-control" id="comentariosEvent" placeholder="Descripción" required="" name="description" #description="ngModel" [(ngModel)]="eventService.eventToCreate.description" ></textarea>
       </div>
          
-      <div class="col-12 d-flex justify-content-center ">
+      <!-- <div class="col-12 d-flex justify-content-center "> -->
         <!-- Button trigger modal -->
-          <button type="submit" class="btn btn-primary mt-3 mb-4 w-25" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-              Crear  
+          <button type="submit" class="btn btn-primary mt-3 mb-4 w-25" >
+               Crear  
           </button>
     
           <!-- Modal -->
-          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
               <div class="modal-dialog">
               <div class="modal-content ">
                   <div class="modal-header conf-crear-evento ">
@@ -71,12 +72,37 @@
                   </div>
               </div>
               </div>
-          </div>
-      </div>
+          </div> -->
+      <!-- </div> -->
     </form>
   
   </div>
   
+
+
+  <div class="d-flex justify-content-center mt-5">
+    <table class="table table-borderless w-75 border" >
+      <thead>
+        <tr>
+          <th class="text-center" scope="col">NAME</th>
+          <th class="text-center" scope="col">_id</th>
+          <th class="text-center" scope="col">FECHA DESDE</th>
+          <th class="text-center" scope="col">FECHA HASTA</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let event of eventService.allEvent">
+          <td >{{event.name}}</td>
+          <td >{{event._id}}</td>
+          <td >{{event.date_from}}</td>
+          <td >{{event.date_to}}</td>
+       
+          <!-- <td><button type="button" class="btn btn-danger" (click)="deleteProduct(product._id || '')">Eliminar</button></td> -->
+          <td><button type="button" class="btn btn-primary" (click)="createOrUpdateEvent(eventForm)" >Editar</button></td>
+        </tr> 
+      </tbody>
+    </table>
+  </div>
   
   
   
