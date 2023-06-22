@@ -11,17 +11,15 @@ import { HomeComponent } from './routes/home/home.component';
 import { PoliticasComponent } from './routes/politicas/politicas.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ButtonComponent } from './components/button/button.component';
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+import { HeaderNotificationsComponent } from './components/header-notifications/header-notifications.component';
+
 // Modulo de amigos
 import { AmigosModule } from './routes/amigos/amigos.module';
->>>>>>> features/friends
-=======
+
 
 import { LaddignPageComponent } from './routes/laddign-page/laddign-page.component';
->>>>>>> laddig-page
->>>>>>> 36157695095552e1b512b93d64c5b694dae40c6e
+import { CardHomeComponent } from './components/card-home/card-home.component';
+import { LoginComponent } from './routes/login/login.component';
 
 @NgModule({
   declarations: [
@@ -31,14 +29,12 @@ import { LaddignPageComponent } from './routes/laddign-page/laddign-page.compone
     CalificarComponent,
     PerfilComponent,
     HomeComponent,
+    HeaderNotificationsComponent,
     PoliticasComponent,
     NavbarComponent,
-<<<<<<< HEAD
-    ButtonComponent
-=======
-    ButtonComponent,
-    LaddignPageComponent
->>>>>>> laddig-page
+    CardHomeComponent,
+    LoginComponent,
+
   ],
   imports: [
     BrowserModule,
