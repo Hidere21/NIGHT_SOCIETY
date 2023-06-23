@@ -2,11 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment.development';
 import { User } from '../interfaces/user.interface';
-<<<<<<< HEAD
 import jwtDecode from 'jwt-decode';
-=======
-// import { jwtDecode } from 'jwt-decode';
->>>>>>> homepage
 @Injectable({
   providedIn: 'root'
 })
