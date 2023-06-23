@@ -5,6 +5,9 @@ export class User {
     lastName?: string;
     email?: string;
     password?: string;
+    number?: string;
+    dateBirth?: string;
+    gener?:string
 
 
     //constructor
@@ -13,12 +16,18 @@ export class User {
         name = "",
         lastName = "",
         email = "",
-        password = ""
+        password = "",
+        number = "",
+        dateBirth = "",
+        gener = ""
     ){
         this.name = name;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
+        this.number = number;
+        this.dateBirth = dateBirth;
+        this.gener = gener;
     }
 
 

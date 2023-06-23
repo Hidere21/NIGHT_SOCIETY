@@ -13,6 +13,9 @@ export class RegisterComponent {
   constructor( public user: UserService){
 
   }
+  cleanForm(){
+    this.user.userToCreate = new User()
+  }
 
   createUser(form: NgForm){
 
@@ -20,6 +23,8 @@ export class RegisterComponent {
 
     this.user.createUser(data).subscribe((data)=>{
       console.log({data})
+      alert("Usuario creado")
+      this.cleanForm()
     })
   }
 
