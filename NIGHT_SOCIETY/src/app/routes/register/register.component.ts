@@ -9,9 +9,15 @@ import { User } from 'src/app/models/user.model';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
+  use: any = {};
+  file: any;
 
   constructor( public user: UserService){
 
+  }
+
+  handleFileInput(event: any) {
+    this.file = event.target.files[0];
   }
   cleanForm(){
     this.user.userToCreate = new User()

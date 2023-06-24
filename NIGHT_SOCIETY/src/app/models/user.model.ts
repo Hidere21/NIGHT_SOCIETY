@@ -7,7 +7,8 @@ export class User {
     password?: string;
     number?: string;
     dateBirth?: string;
-    gener?:string
+    gener?:string;
+    userImage?:string;
 
 
     //constructor
@@ -19,7 +20,8 @@ export class User {
         password = "",
         number = "",
         dateBirth = "",
-        gener = ""
+        gener = "",
+        userImage = ""
     ){
         this.name = name;
         this.lastName = lastName;
@@ -28,6 +30,7 @@ export class User {
         this.number = number;
         this.dateBirth = dateBirth;
         this.gener = gener;
+        this.userImage = userImage;
     }
 
 
