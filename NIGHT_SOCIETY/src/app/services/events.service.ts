@@ -12,6 +12,8 @@ export class EventsService {
   eventToCreate: Event = new Event()
   // 
   allEvent: Event[] = []
+  filterEvent: Event[] = []
+
 
   constructor(private http: HttpClient ) { }
 
@@ -36,4 +38,20 @@ export class EventsService {
     return this.http.put(`${this.urlApi}/update`, dataToUpdate)
    }
 
-}
+
+
+   filterData(valueToSearch: string): void{
+    const BY_NAME = {};
+
+    // this.apollo.watq
+
+
+    }
+
+   }
+
+
+
+
+
+

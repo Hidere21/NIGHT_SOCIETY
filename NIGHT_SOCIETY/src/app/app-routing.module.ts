@@ -6,6 +6,7 @@ import { PoliticasComponent } from './routes/politicas/politicas.component';
 import { CrearEventosComponent } from './routes/crear-eventos/crear-eventos.component';
 import { EventosComponent } from './routes/eventos/eventos.component';
 
+
 const routes: Routes = [
   { path: 'laddig', component: LaddignPageComponent },
   { path: 'calificar', component: CalificarComponent },
@@ -17,6 +18,8 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule], 
+  
+  
 })
 export class AppRoutingModule {}

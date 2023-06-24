@@ -55,6 +55,10 @@ export class CrearEventosComponent {
       })
     }
 
+    updateEvent(event: Event){
+      this.eventService.eventToCreate = event
+    }
+
     // deleteEvent(_id: string){
     //   this.eventService.deleteEvent(_id).subscribe((data) => {
     //     alert("evento eliminado")
@@ -62,10 +66,6 @@ export class CrearEventosComponent {
     //   })
     // }
 
-    // updateProduct(event: Event){
-    //   this.eventService.eventToCreate = event
-
-    // }
-
+  
 
 }

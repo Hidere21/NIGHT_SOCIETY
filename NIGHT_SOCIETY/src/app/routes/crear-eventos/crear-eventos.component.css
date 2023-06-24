@@ -14,7 +14,7 @@
   }
   .icon-craer-evento {
     color: #190f40;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
   .btn-crear-evento {
     border: none;
@@ -25,11 +25,11 @@
   }
   .btn-secondary {
     border: none;
-    background-color: #0540f2;
+    background-color: #190f40;
   }
   .btn-secondary:hover {
     border: none;
-    background-color: #3d67e4;
+    background-color: #190f40;
   }
   .btn-primary {
     width: 100px;

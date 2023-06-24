@@ -75,6 +75,17 @@ export const updateEvent = async (req: Express.Request, res: Express.Response) =
 };
 
 
+export const uploadImageEvent = async (req: Express.Request, res: Express.Response) => {
+  try {
+    let {file} = req
+    return res.status(201).json({ msg: "archivo guardado correctamente"})
+  } catch (error) {
+    console.log(error)
+    return res.status(400).json({ msg: "ha ocurrido un error en el api", error });
+  }
+
+}
+
 // export const deleteEvent = async (req: Express.Request, res: Express.Response) => {
 //   try {
 //     let {_id} = req.params

@@ -14,8 +14,11 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ButtonComponent } from './components/button/button.component';
 import { AmigosModule } from './routes/amigos/amigos.module';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LaddignPageComponent } from './routes/laddign-page/laddign-page.component';
+
+
+import { NgModel } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,8 +34,10 @@ import { LaddignPageComponent } from './routes/laddign-page/laddign-page.compone
     LaddignPageComponent,
     ButtonComponent,
     LaddignPageComponent,
+ 
+    
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

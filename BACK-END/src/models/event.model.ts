@@ -8,7 +8,7 @@ const Event = new Schema({
     date_from: {type: Date, required: true},
     date_to: {type: Date, required: true},
     hour: {type: String, required: true},
-    images: {type: String, required: true},
+    images: {type: String, required: false},
     description: {type: String, required: true},
     opinions: {type: Array, default: []},
 },{

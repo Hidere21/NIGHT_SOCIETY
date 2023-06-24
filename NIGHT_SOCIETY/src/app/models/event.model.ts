@@ -22,7 +22,7 @@ export class Event{
          ){
             this.name = name;
             this.address = address;
-            this.date_from  = date_from ;
+            this.date_from  = date_from 
             this.date_to = date_to;
             this.hour = hour;
             this.images = images;

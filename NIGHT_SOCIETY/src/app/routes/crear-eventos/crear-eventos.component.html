@@ -3,12 +3,13 @@
 <div class="vh-100 d-flex justify-content-center align-items-center">
     
     <form #eventForm="ngForm" (ngSubmit)="createOrUpdateEvent(eventForm)" class="w-50 row container-crear-evento d-flex justify-content-center align-items-center">
-      <div class=" d-flex justify-content-center icon-craer-evento">
+      <div class=" d-flex justify-content-center gap-3 icon-craer-evento">
           <i class="bi bi-calendar-plus-fill"></i>
+          <h2 class="fw-bold">Crear Evento</h2> 
      </div>
-      <div class="crear-evento m-auto col-12 d-flex justify-content-center">
+      <!-- <div class="crear-evento m-auto col-12 d-flex justify-content-center">
           <h2 class="fw-bold">Crear Evento</h2>   
-      </div>
+      </div> -->
   
       <div class="col-12 col-md-10">
         <input type="text" hidden name="_id" #_id="ngModel" [(ngModel)]="eventService.eventToCreate._id"  />
@@ -79,26 +80,33 @@
   </div>
   
 
+  <h1 class="d-flex justify-content-center mt-5" >Mis EVENTOS</h1>
+
 
   <div class="d-flex justify-content-center mt-5">
+    
     <table class="table table-borderless w-75 border" >
       <thead>
         <tr>
           <th class="text-center" scope="col">NAME</th>
-          <th class="text-center" scope="col">_id</th>
+          <!-- <th class="text-center" scope="col">_id</th> -->
           <th class="text-center" scope="col">FECHA DESDE</th>
           <th class="text-center" scope="col">FECHA HASTA</th>
+          <!-- <th class="text-center" scope="col">HORA</th>
+          <th class="text-center" scope="col">DESCIPCION</th> -->
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let event of eventService.allEvent">
           <td >{{event.name}}</td>
-          <td >{{event._id}}</td>
+          <!-- <td >{{event._id}}</td> -->
           <td >{{event.date_from}}</td>
           <td >{{event.date_to}}</td>
+          <!-- <td >{{event.hour}}</td>
+          <td >{{event.description}}</td> -->
        
           <!-- <td><button type="button" class="btn btn-danger" (click)="deleteProduct(product._id || '')">Eliminar</button></td> -->
-          <td><button type="button" class="btn btn-primary" (click)="createOrUpdateEvent(eventForm)" >Editar</button></td>
+          <td><button type="button" class="btn btn-primary" (click)="updateEvent(event)" >Editar</button></td>
         </tr> 
       </tbody>
     </table>

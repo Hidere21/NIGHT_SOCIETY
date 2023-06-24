@@ -1,18 +1,18 @@
-<section class="d-flex justify-content-center align-content-center mt-4 mb-4">
-    <form class="d-flex justify-content-center align-content-center search-evento" role="search">
-      <a href="#">
-         <i class="bi bi-calendar-check-fill me-2 search-icon" ></i>
-      </a>
-      <input class="form-control me-2 " type="search" placeholder="Buscar Evento" aria-label="Search">
-      <button class="btn btn-primary  " type="submit" >Buscar</button>
-    </form>
-  </section>
-
 
 
 <section class="container-fluid row d-flex justify-content-center gap-5 mt-5 ms-5 eventos">
 
-<div *ngFor="let event of eventService.allEvent" class="evento col-md-12 col-lg-5 d-flex flex-column align-items-center text-center">
+  <div
+  class="d-flex justify-content-center align-content-center search-evento"
+  >
+  <input class="w-50 form-control me-2" type="text" placeholder="Buscar evento" (keyup)= searchEvent() [(ngModel)]="search">
+
+</div>
+
+
+  <div class="container-fluid row d-flex justify-content-center gap-5 mt-5 ms-5 eventos">
+
+<div *ngFor="let event of eventService.filterEvent" class="evento col-md-12 col-lg-5 d-flex flex-column align-items-center text-center">
   <!-- Titulo evento -->
   <h2 class="text-titulo-evento p-3">{{event.name}}</h2>
   <!-- carrusel images -->
@@ -45,11 +45,12 @@
   <!-- Datos del evento -->
   <div class="w-75 mt-3">
     <p class="text-light-2"> {{event.address}}</p>
-    <p class="text-light-2"> Desde {{event.date_from}} hasta {{event.date_to}}  - {{event.hour}}</p>
+    <p class="text-light-2"> Desde {{event.date_from | date}}</p>
+    <p class="text-light-2">  hasta {{event.date_to | date}}  - {{event.hour}}</p>
     <p class="text-light-2"> {{event.description}}</p>
   </div>
   <!-- comentrios -->
-  <div class="iconos-sociales d-flex flex-wrap align-items-center justify-content-center">
+  <div class="iconos-sociales d-flex flex-wrap align-items-center justify-cocd bntent-center">
     <a class="likes" href="#" target="" rel="noopener noreferrer" >
       <i id="likes-evento"  class="bi bi-balloon-heart-fill"></i>
     </a>
@@ -77,5 +78,5 @@
     </div>
   </div>
 </div>
-
+</div>
 </section>
