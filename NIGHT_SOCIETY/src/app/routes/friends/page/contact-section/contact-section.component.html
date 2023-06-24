@@ -1,0 +1,35 @@
+<section class="flex flex-col flex-wrap justify-center items-center h-full w-full relative">
+
+    <h2 class="text-5xl text-white font-medium text-center absolute top-16">Administra tus
+        <span class="font-bold text-transparent bg-gradient-to-b from-white to-nightpurple bg-clip-text">
+            amigos
+        </span>
+    </h2>
+
+    <div *ngFor="let friend of friends">
+
+        <div class="flex items-center justify-center gap-20 mt-20">
+
+            <main class="bg-nightpurple rounded-lg w-96 shadow-custom text-white">
+
+                <div class="flex justify-around p-1">
+                    <img class="w-12 h-12 my-2 rounded-full" [src]="friend.userImage" [alt]="friend.name">
+                    <div class="mt-2">
+                        <p class="font-medium text-center hover:text-lg">{{friend.name}}</p>
+                        <p class="text-base text-white">{{friend.email}}</p>
+                    </div>
+                    <div class="flex items-center">
+                        <button
+                            class="px-4 py-2 text-white border-0 border-black rounded-md bg-nightblue hover:bg-white hover:text-nightpurple">Eliminar</button>
+                    </div>
+                </div>
+
+            </main>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- *ngFor="let friend of friendsService.myFriends -->

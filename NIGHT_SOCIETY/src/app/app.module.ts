@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+// Modulo de amigos
+import { FriendsModule } from './routes/friends/friends.module';
+
 import { AppComponent } from './app.component';
 import { EventosComponent } from './routes/eventos/eventos.component';
 import { CrearEventosComponent } from './routes/crear-eventos/crear-eventos.component';
@@ -11,17 +14,7 @@ import { HomeComponent } from './routes/home/home.component';
 import { PoliticasComponent } from './routes/politicas/politicas.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ButtonComponent } from './components/button/button.component';
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-// Modulo de amigos
-import { AmigosModule } from './routes/amigos/amigos.module';
->>>>>>> features/friends
-=======
-
 import { LaddignPageComponent } from './routes/laddign-page/laddign-page.component';
->>>>>>> laddig-page
->>>>>>> 36157695095552e1b512b93d64c5b694dae40c6e
 
 @NgModule({
   declarations: [
@@ -33,19 +26,11 @@ import { LaddignPageComponent } from './routes/laddign-page/laddign-page.compone
     HomeComponent,
     PoliticasComponent,
     NavbarComponent,
-<<<<<<< HEAD
-    ButtonComponent
-=======
     ButtonComponent,
-    LaddignPageComponent
->>>>>>> laddig-page
+    LaddignPageComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    AmigosModule,
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FriendsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
