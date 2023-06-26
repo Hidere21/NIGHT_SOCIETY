@@ -25,7 +25,7 @@
       <a href="#"><i class="fa-brands fa-twitter"></i></a>
       <a href="#"><i class="fa-brands fa-instagram"></i></a>
     </div>
-    <a href="#" class="btn">Registrarse</a>
+    <a [routerLink]="['/register']" class="btn">Registrarse</a>
   </div>
   <div class="home-img">
     <img src="../../../assets/animation-ladding.png" alt="" />
@@ -72,7 +72,7 @@
     <!-- diseño foooter -->
     <footer class="footer">
       <div class="footer-text">
-        <p>Copyright &copy; 2023< By Night Society | All Rights Reserved. | <a href="#">Politicas de privacidad</a></p>
+        <p>Copyright &copy; 2023< By Night Society | All Rights Reserved. | <a [routerLink]="['/politicas']">Politicas de privacidad</a></p>
       </div>
       <div class="footer-iconTop">
         <a (click)="scrollTo(Inicio)"><i class="fa-solid fa-arrow-up"></i></a>

@@ -1,4 +1,5 @@
 import express from "express";
+import dotenv from "dotenv";
 import "dotenv/config";
 import cors from "cors";
 import morgan from "morgan";
@@ -8,6 +9,8 @@ import multer, { Multer } from 'multer';
 import path from 'path'
 
 const app = express();
+dotenv.config();
+
 const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
@@ -29,6 +32,8 @@ const upload: Multer = multer({ storage });
 
 // Rutas
 app.use("/api", apiRoutes);
+app.use(express)
+
 
 
 // Base de datos
