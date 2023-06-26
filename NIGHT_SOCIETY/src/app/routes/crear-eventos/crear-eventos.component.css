@@ -31,6 +31,13 @@
     border: none;
     background-color: #190f40;
   }
+
+  .form-labelA:hover{
+    border: none;
+    background-color: #0f4023;
+  }
+
+
   .btn-primary {
     width: 100px;
   }
@@ -39,11 +46,46 @@
     color: #e3e0e0;
   }
   
+  .table-event{
+    border: 6px solid #190f40;
+    border-radius: 0px;
+    background-color: #ddd;
+    box-shadow: 0px 3px 6px 3px #999;
+  }
   
+  .thead-event{
+    background-color: #190f40;
+    color: #e3e0e0;
+  }
   
+  .color_event{
+    text-emphasis-color: #190f40;
+  }
   
-  
-  
+  input:invalid,
+textarea:invalid {
+  border-color: rgb(233, 157, 157);
+}
+
+input:required:valid,
+textarea:required:valid {
+  border-color: green;
+}
+
+
+    .image-preview {
+      width: 300px; /* Ajusta el ancho deseado */
+      height: auto; /* Ajusta la altura automáticamente */
+    }
+    
+    .image-preview img {
+      width: 80%;
+      height: 80%;
+      object-fit: cover; /* Ajusta la imagen para que ocupe todo el contenedor */
+    }
+
+
+
   
   /* Medias query */
   

@@ -28,7 +28,7 @@
     border-radius: 40px 0 40px 0;
     background-color: #ddd;
     box-shadow: 2px 3px 10px 3px #190f40;
-    height: 77vh;
+    height: 75vh;
   }
   
   .carousel{
@@ -112,11 +112,27 @@
     color: #e3e0e0;
   }
   
+  input:invalid {
+    border-color: rgb(151, 99, 134);
+  }
+  
+  input:required:valid {
+    border-color: green;
+  }
 
 
   @media screen and (max-width: 990px) {
     .eventos{
-     width: 800px;
+     width: 600px;
+     font-size: 0.5rem;
+   
+  
+      }
+  }
+
+  @media screen and (max-width: 650px) {
+    .eventos{
+     width: 500px;
      font-size: 0.5rem;
    
   
@@ -131,3 +147,12 @@
        }
   }
   
+  @media screen and (max-width: 380px) {
+    .eventos{
+     width: 250px;
+     font-size: 0.5rem;
+   
+   
+      }
+ }
+ 

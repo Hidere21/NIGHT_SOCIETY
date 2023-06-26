@@ -39,6 +39,8 @@ export const createEvent = async (req: Express.Request, res: Express.Response) =
   
   try {
 
+    console.log(req.file)
+
     let newEvent = req.body
 
     const eventCreated = await eventModel.create(newEvent)
@@ -75,16 +77,44 @@ export const updateEvent = async (req: Express.Request, res: Express.Response) =
 };
 
 
-export const uploadImageEvent = async (req: Express.Request, res: Express.Response) => {
-  try {
-    let {file} = req
-    return res.status(201).json({ msg: "archivo guardado correctamente"})
-  } catch (error) {
-    console.log(error)
-    return res.status(400).json({ msg: "ha ocurrido un error en el api", error });
-  }
+// export const uploadImageAndCreateEvent = async (req: Request, res: Response) => {
+//   try {
+//     if (!req.file) {
+//       return res.status(400).json({ error: 'No se ha seleccionado ninguna imagen' });
+//     }
 
-}
+//     // Crear una instancia del evento con la imagen
+//     const newEvent = new Event({
+//       name: req.body.name,
+//       address: req.body.address,
+//       date_from: req.body.date_from,
+//       date_to: req.body.date_to,
+//       hour: req.body.hour,
+//       images: req.file.filename,
+//       description: req.body.description
+//     });
+
+//     // Guardar el evento en la base de datos
+//     await newEvent.save();
+
+//     res.status(200).json({ message: 'Imagen subida y evento creado correctamente' });
+//   } catch (error) {
+//     console.error('Error al subir imagen y crear evento:', error);
+//     res.status(500).json({ error: 'Error al subir imagen y crear evento' });
+//   }
+// };
+
+
+// export const uploadImageEvent = async (req: Express.Request, res: Express.Response) => {
+//   try {
+//     let {file} = req
+//     return res.status(201).json({ msg: "archivo guardado correctamente"})
+//   } catch (error) {
+//     console.log(error)
+//     return res.status(400).json({ msg: "ha ocurrido un error en el api", error });
+//   }
+
+// }
 
 // export const deleteEvent = async (req: Express.Request, res: Express.Response) => {
 //   try {

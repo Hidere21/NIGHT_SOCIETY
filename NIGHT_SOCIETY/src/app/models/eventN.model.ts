@@ -4,7 +4,7 @@ export class Event{
     date_from?: Date
     date_to?: Date
     hour?: String
-    images?: String
+    images?: String[]
     description?: String
     _id?:String
     opinions?: []
@@ -15,7 +15,7 @@ export class Event{
         date_from = new Date(),
         date_to = new Date(),
         hour = "",
-        images = "",
+        images = [],
         description = "",
         _id= "",
         opinions?: []        

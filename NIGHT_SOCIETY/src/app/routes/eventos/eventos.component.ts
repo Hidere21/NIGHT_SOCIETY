@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { EventsService } from 'src/app/services/events.service';
 import { FormsModule } from '@angular/forms';
 import { NgModel } from '@angular/forms';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-eventos',
@@ -10,7 +11,10 @@ import { NgModel } from '@angular/forms';
 })
 export class EventosComponent {
 
-  constructor(public eventService: EventsService ){ }
+
+  constructor(public eventService: EventsService ){ 
+   
+  }
 
   ngOnInit(){
     
@@ -19,12 +23,23 @@ export class EventosComponent {
   }
 
 
-  getAllEvent(){
-    this.eventService.getAllEvent().subscribe((data: any) =>{
-      this.eventService.allEvent = data.result || []
-      this.eventService.filterEvent = data.result || []
-      console.log(data)
-    })
+  getAllEvent() {
+    this.eventService.getAllEvent().subscribe((data: any) => {
+      const currentDate = new Date();
+      this.eventService.allEvent = this.eventService.allEvent.filter(event => {
+        const eventDate = moment(event.date_from, 'YYYY-MM-DD').toDate();
+        return eventDate > currentDate;
+      });
+  
+      // Filtrar eventos cuya fecha sea mayor a la fecha actual
+   
+      this.eventService.filterEvent = this.eventService.allEvent.filter(event => {
+        const eventDate = moment(event.date_from, 'YYYY-MM-DD').toDate();
+        return eventDate > currentDate;
+      });
+  
+      console.log(data);
+    });
   }
  
 

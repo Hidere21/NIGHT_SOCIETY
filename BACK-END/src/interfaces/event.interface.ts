@@ -1,4 +1,5 @@
 export interface Event {
+    _id: string;
     name: string;
     address: string;
     date_from: Date;
