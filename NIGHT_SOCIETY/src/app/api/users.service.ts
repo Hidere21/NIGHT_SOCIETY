@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import * as jwtDecode  from "jwt-decode"
+import jwtDecode  from "jwt-decode"
 import {User} from "../../../../BACK-END/src/interfaces/user.interface"
 import { environment } from 'src/environments/environment.development';
 
@@ -13,14 +13,15 @@ export class UsersService {
   createToUser?: User
   allUsers: User[] = []
   auth: any = {
-    username: "",
+    email: "",
     password: ""
   }
 
   constructor(private http: HttpClient) { }
 
   getAllUsers(){
-    return this.http.get(`${this.urlApi}/getAll`)
+    return this.http.get(`${this.urlApi}/getUsers`)
+
   }
    createUser(data: User){
     return this.http.post(`${this.urlApi}/create`,data)
@@ -39,6 +40,27 @@ export class UsersService {
    login(data: any){
     return this.http.post(`${this.urlApi}/login`,data)
    }
+   isLoggedIn(){
+    return localStorage.getItem('token') ? true : false
+   }
+
+   decodeToken(): any{
+    const token = localStorage.getItem('token')
+    let decoded
+    try {
+      decoded = jwtDecode(token ? token: "Error")
+    } catch (error) {
+      decoded = false
+
+    }
+    return decoded
+
+
+  }
+  isAdmin(){
+    let obj = this.decodeToken()
+    return obj && obj.role === 'admin' ? true: false
+  }
 
 
 }

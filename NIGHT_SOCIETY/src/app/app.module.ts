@@ -20,6 +20,7 @@ import { AmigosModule } from './routes/amigos/amigos.module';
 import { LaddignPageComponent } from './routes/laddign-page/laddign-page.component';
 import { CardHomeComponent } from './components/card-home/card-home.component';
 import { LoginComponent } from './routes/login/login.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { LoginComponent } from './routes/login/login.component';
     BrowserModule,
     AppRoutingModule,
     AmigosModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

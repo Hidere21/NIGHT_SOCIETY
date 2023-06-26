@@ -15,7 +15,7 @@ export class LoginComponent {
   login(form: NgForm) {
     let data = form.value;
 
-    if (!data.password || !data.username)
+    if (!data.password || !data.email)
       return alert('debes llenar todos los campos');
 
     this.user.login(data).subscribe({
@@ -25,6 +25,7 @@ export class LoginComponent {
       },
       error: (err: any) => {
         alert("Error al iniciar sesión");
+        console.log(err)
       }
     });
   }

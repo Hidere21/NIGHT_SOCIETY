@@ -5,7 +5,7 @@ const router = Router()
 
 router.get("/getEvents", getEvents);
 router.get("/getEvent", getEvent);
-router.post("createEvent", createEvent);
+router.post("/createEvent", createEvent);
 router.put("/updateEvent", updateEvent)
 
 

@@ -9,7 +9,8 @@ const Event = new Schema({
     date_to: {type: Date, required: true},
     hour: {type: String, required: true},
     images: {type: String, required: true},
-    description: {type: String, required: true}
+    description: {type: String, required: true},
+    likes: {type: Number}
 },{
     timestamps: true,
     versionKey: false

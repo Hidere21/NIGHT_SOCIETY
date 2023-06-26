@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-card-home',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class CardHomeComponent {
 
+
+  likes: number = 0
+
+  like(){
+    this.likes++
+  }
 }
