@@ -1,7 +1,33 @@
-import { Request, Response } from "express";
+import  {Response, Request}  from "express";
 import userModel from "../models/user.model";
+import jwt from "jsonwebtoken"
 
-const getAllUsers = async (_req: Request, res: Response) => {
+
+
+const login =async (req: Request, res: Response) => {
+
+    try {
+        let {email, password} = req.body
+        let user:any =await  userModel.findOne({email})
+        if(!user) throw {status: 404, msg: "El usuario no existe"}
+
+        if(user.password !== password) throw { status: 401, msg: "Constraseña incorrecta"}
+
+        user = user.toObject()
+        delete user.password
+        let secret = process.env.SECRET_KEY
+        if (!secret) throw {status: 400, msg: "No hay como encriptar el token"}
+        const token = jwt.sign(user, secret)
+        return res.status(200).json({msg: "Sesion Iniciada correctamente", token})
+
+    } catch (error) {
+        console.log(error)
+        return res.status(400).json({msg: error })
+    }
+    
+}
+
+const getAllUsers = async ( req: Request, res: Response) => {
     try {
         const users = await userModel.find({}, { password: 0 });
         // validacion ternario
@@ -95,4 +121,4 @@ const editFriends = async (req: Request, res: Response) => {
 };
 
 
-export { getAllUsers, getFriends, getPosibleFriends, createUser, editFriends };
+export { getAllUsers, getFriends, getPosibleFriends, createUser, editFriends,login };
