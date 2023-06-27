@@ -74,6 +74,17 @@ export const updateEvent = async (req: Express.Request, res: Express.Response) =
   } 
 };
 
+export const like =async (req: Express.Request, res: Express.Response) => {
+  try {
+    let {_id ,likes} =req.body
+    const updateLikes = await eventModel.findOneAndUpdate(_id, likes)
+    return res.status(204).json({msg: "Like agregado"})
+
+  } catch (error) {
+    
+  }
+  
+}
 
 // export const deleteEvent = async (req: Express.Request, res: Express.Response) => {
 //   try {
