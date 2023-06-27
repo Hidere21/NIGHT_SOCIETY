@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { HomeComponent } from './routes/home/home.component';
 import { PoliticasComponent } from './routes/politicas/politicas.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ButtonComponent } from './components/button/button.component';
+import { EstrellasComponent } from './components/estrellas/estrellas.component';
 
 
 @NgModule({
@@ -25,12 +27,14 @@ import { ButtonComponent } from './components/button/button.component';
     HomeComponent,
     PoliticasComponent,
     NavbarComponent,
-    ButtonComponent
+    ButtonComponent,
+    EstrellasComponent
 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
