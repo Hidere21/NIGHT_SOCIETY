@@ -5,9 +5,14 @@ import { HomeComponent } from './routes/home/home.component';
 import { LoginComponent } from './routes/login/login.component';
 
 const routes: Routes = [
-  {path: "laddig", component: LaddignPageComponent},
-  {path: "home", component: HomeComponent},
-  {path: "login", component: LoginComponent}
+  { path: 'laddig', component: LaddignPageComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  {
+    path: 'friends',
+    loadChildren: () =>
+      import('./routes/friends/friends.module').then((m) => m.FriendsModule),
+  },
 ];
 
 @NgModule({
