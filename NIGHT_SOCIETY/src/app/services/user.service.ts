@@ -23,17 +23,9 @@ export class UserService {
 
   //metodos
 
-  // createUser(data: User){
-  //   return this.http.post(`${this.urlApi}/create`, data)
-  // }
-
-  createUser(user: any, image: File) {
-    const formData = new FormData();
-    formData.append('image', image); // Append the image file to the form data
-    formData.append('user', JSON.stringify(user)); // Append the user data as a JSON string
-  
-    const url = 'http://localhost:3000/API/create'; // Replace with your actual backend API endpoint
-  
-    return this.http.post(url, formData);
+  createUser(data: User){
+    return this.http.post(`${this.urlApi}/create`, data)
   }
+
+
 }
