@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+// Modulo de amigos
+
+
 import { AppComponent } from './app.component';
 
 import { EventosComponent } from './routes/eventos/eventos.component';
@@ -13,13 +16,12 @@ import { PoliticasComponent } from './routes/politicas/politicas.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeaderNotificationsComponent } from './components/header-notifications/header-notifications.component';
 
-// Modulo de amigos
-import { AmigosModule } from './routes/amigos/amigos.module';
 import { LaddignPageComponent } from './routes/laddign-page/laddign-page.component';
 import { CardHomeComponent } from './components/card-home/card-home.component';
 import { LoginComponent } from './routes/login/login.component';
 import { FormsModule } from '@angular/forms';
 
+import { ButtonComponent } from './components/button/button.component';
 
 @NgModule({
   declarations: [
@@ -35,20 +37,17 @@ import { FormsModule } from '@angular/forms';
     CardHomeComponent,
     LoginComponent,
     LaddignPageComponent,
-
-
-
-
+    ButtonComponent,
+    LaddignPageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    AmigosModule
-
-
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule
   ],
-
   providers: [],
   bootstrap: [AppComponent],
 })

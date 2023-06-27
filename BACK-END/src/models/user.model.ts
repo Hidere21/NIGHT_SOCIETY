@@ -9,14 +9,14 @@ import { User } from "../interfaces/user.interface";
     password: { type: String, required: true },
     friends: { type: [String], required: true, default: [] },
     accounts: {
-        type: [
-          {
-            name: { type: String },
-            user: { type: String },
-            url: { type: String},
-          },
-        ]
-      },
+      type: [
+        {
+          name: { type: String },
+          user: { type: String },
+          url: { type: String },
+        },
+      ]
+    },
     userImage: { type: String, default: "" },
   },
   {
