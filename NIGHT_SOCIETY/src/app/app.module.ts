@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,8 +15,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ButtonComponent } from './components/button/button.component';
 import { AmigosModule } from './routes/amigos/amigos.module';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
 import { LaddignPageComponent } from './routes/laddign-page/laddign-page.component';
+import { EstrellasComponent } from './components/estrellas/estrellas.component';
+
 
 @NgModule({
   declarations: [
