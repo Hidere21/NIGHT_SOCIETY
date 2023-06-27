@@ -50,56 +50,20 @@ const getPosibleFriends = async (req: Request, res: Response) => {
     }
 };
 
-// Configure multer storage
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, `${__dirname}/../uploads`); // Set the destination folder where the uploaded files will be stored
-    },
-    filename: function (req, file, cb) {
-        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-        cb(null, file.fieldname + '-' + uniqueSuffix); // Set the filename for the uploaded file
-    }
-});
 
-// Create multer upload instance
-const upload = multer({ storage: storage });
 
-const createUser = async (req: Request, res: Response) => {
-    try {
-        // Upload the image file using multer middleware
-        upload.single('image')(req, res, async (err) => {
-            if (err instanceof multer.MulterError) {
-                // A multer error occurred
-                return res.status(400).json({ error: err, message: 'Error al subir la imagen' });
-            } else if (err) {
-                // An unknown error occurred
-                return res.status(500).json({ error: err, message: 'Error interno del servidor' });
-            }
+ const createUser = async (req: Request, res: Response) => {
+     try {
+         const user = req.body;
+         const created = await userModel.create(user);
 
-            const user = req.body;
-            user.image = req.file?.filename; // Add the filename to the user object
-
-            const created = await userModel.create(user);
-
-            return res.status(201).json({ created, message: 'Usuario creado correctamente' });
-        });
-    } catch (error) {
-        return res.status(400).json({ error, message: 'Error al crear el usuario' });
-    }
-};
-
-// const createUser = async (req: Request, res: Response) => {
-//     try {
-//         const user = req.body;
-//         const created = await userModel.create(user);
-
-//         return res
-//             .status(201)
-//             .json({ created, message: "Usuario creado correctamente" });
-//     } catch (error) {
-//         return res.status(400).json({ error, message: "Error al crear el usuario" });
-//     }
-// };
+         return res
+             .status(201)
+             .json({ created, message: "Usuario creado correctamente" });
+     } catch (error) {
+         return res.status(400).json({ error, message: "Error al crear el usuario" });
+     }
+ };
 
 const editFriends = async (req: Request, res: Response) => {
     try {
