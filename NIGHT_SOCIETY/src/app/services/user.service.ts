@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment.development';
-import { User } from '../models/user.model';
+import { UserModel } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +9,8 @@ import { User } from '../models/user.model';
 export class UserService {
 
   urlApi = `${environment.API_URI}/user`
-  userToCreate: User = new User()
-  allUser: User[] = []
+  userToCreate: UserModel = new UserModel()
+  allUser: UserModel[] = []
   auth: any = {
     username: '',
     password: ''
@@ -23,7 +23,7 @@ export class UserService {
 
   //metodos
 
-  createUser(data: User){
+  createUser(data: UserModel){
     return this.http.post(`${this.urlApi}/create`, data)
   }
 

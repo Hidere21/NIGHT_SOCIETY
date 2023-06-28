@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { UserService } from 'src/app/services/user.service';
+// import { UserService } from 'src/app/services/user.service';
+import { UsersService} from 'src/app/api/users.service';
+
 import { NgForm } from '@angular/forms';
-import { User } from 'src/app/models/user.model';
+import { UserModel } from 'src/app/models/user.model';
 
 @Component({
   selector: 'app-register',
@@ -11,13 +13,13 @@ import { User } from 'src/app/models/user.model';
 export class RegisterComponent {
 
 
-  constructor( public user: UserService){
+  constructor( public user: UsersService){
     
   }
 
 
    cleanForm(){
-     this.user.userToCreate = new User()
+     this.user.userToCreate = new UserModel()
    }
 
 
