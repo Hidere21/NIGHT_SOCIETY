@@ -7,49 +7,43 @@ import * as moment from 'moment';
 @Component({
   selector: 'app-eventos',
   templateUrl: './eventos.component.html',
-  styleUrls: ['./eventos.component.css']
+  styleUrls: ['./eventos.component.css'],
 })
 export class EventosComponent {
+  constructor(public eventService: EventsService) {}
 
-
-  constructor(public eventService: EventsService ){ 
-   
+  ngOnInit() {
+    this.getAllEvent();
+    this.eventService.filterEvent = this.eventService.allEvent;
   }
-
-  ngOnInit(){
-    
-    this.getAllEvent()
-    this.eventService.filterEvent = this.eventService.allEvent
-  }
-
 
   getAllEvent() {
     this.eventService.getAllEvent().subscribe((data: any) => {
       const currentDate = new Date();
-      this.eventService.allEvent = this.eventService.allEvent.filter(event => {
-        const eventDate = moment(event.date_from, 'YYYY-MM-DD').toDate();
-        return eventDate > currentDate;
-      });
-  
+      this.eventService.allEvent = data.result.filter(
+        (event:any) => {
+          const eventDate = moment(event.date_from, 'YYYY-MM-DD').toDate();
+          return eventDate > currentDate;
+        }
+      );
+
       // Filtrar eventos cuya fecha sea mayor a la fecha actual
-   
-      this.eventService.filterEvent = this.eventService.allEvent.filter(event => {
-        const eventDate = moment(event.date_from, 'YYYY-MM-DD').toDate();
-        return eventDate > currentDate;
-      });
-  
-      console.log(data);
+
+      this.eventService.filterEvent = data.result.filter(
+        (event: any) => {
+          const eventDate = moment(event.date_from, 'YYYY-MM-DD').toDate();
+          return eventDate > currentDate;
+        }
+      );
+
+      // console.log(data);
     });
   }
- 
 
-  search = ''
-  searchEvent(){
-  this.eventService.filterEvent = this.eventService.allEvent.filter(event => event.name?.toLowerCase().includes(this.search.toLowerCase()))
-}
-
-
-
-
-
+  search = '';
+  searchEvent() {
+    this.eventService.filterEvent = this.eventService.allEvent.filter((event) =>
+      event.name?.toLowerCase().includes(this.search.toLowerCase())
+    );
+  }
 }

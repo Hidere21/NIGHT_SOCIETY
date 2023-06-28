@@ -1,4 +1,4 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose, { Schema, model, Document } from "mongoose";
 
 //definir esquema de la colleción
 
@@ -11,6 +11,8 @@ const Event = new Schema({
     images: {type: String, required: false},
     description: {type: String, required: true},
     opinions: {type: Array, default: []},
+    qualify: {type: Array, default: []},
+
 },{
     timestamps: true,
     versionKey: false

@@ -8,6 +8,7 @@ export class Event{
     description?: String
     _id?:String
     opinions?: []
+    qualify?: []
 
     constructor(
         name = "",
@@ -18,7 +19,8 @@ export class Event{
         images = [],
         description = "",
         _id= "",
-        opinions?: []        
+        opinions?: [],
+        qualify?: []        
          ){
             this.name = name;
             this.address = address;
@@ -29,6 +31,7 @@ export class Event{
             this.description = description
             this._id = _id;
             this.opinions = opinions
+            this.qualify = qualify
             }
 }
 

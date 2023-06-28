@@ -1,13 +1,7 @@
 import { Router } from "express";
+import * as fs from 'node:fs';
 import controllers from "../controllers";
-import multer from "multer";
-// import { uploadImageAndCreateEvent } from '../controllers/event.controller';
-import upload from "../middlewares/multer";
 
-// import upload from "../middlewares/multer";
-
-const Image = require('../models/Image')
-const storage = require('../middlewares/multer')
 const router = Router()
 
 
@@ -16,27 +10,52 @@ router.get("/getAll", controllers.Event.getEvents);
 router.get("/getONE", controllers.Event.getEvent);
 router.put("/update", controllers.Event.updateEvent)
 
-// router.post('/evento', upload.single('imagen'), uploadImageAndCreateEvent);
-
-// subir el archivo
-// router.post("/upload", upload.single('file'), controllers.Event.uploadImageEvent)
-// const uploader = multer({
-//     storage
-// }).single('file')
-// router.post('/upload', uploader,  async(req, res) =>{
-//     const { body, file} = req
-//     if(file && body){
-//         const newImage = new Image({
-//             fileName : body.name,
-//             fileUrl : `http://localhost:8080/${file.filename}`
-//         })
-//         await newImage.save()
-//         res.json({
-//             newImage: newImage
-//         })
-//     }
-// })
-
-
-
 export default router
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// router.post("/uploadImage",  upload.array('image', 5), (req, res, next) => {
+//     let files = JSON.parse(JSON.stringify(req.files))
+//     const images = files.map((file: { filename: any; originalname: any; }) => {
+//       return {
+//         filename: file.filename,
+//         originalname: file.originalname
+//       }
+//     })
+//     Image.insertMany(images, (err: any, result: any) => {
+//       if (err) return res.sendStatus(404)
+//       res.json(result)
+//     })
+//   })
+
+// router.get('image/:id', (req, res, next) => {
+//     Image.findOne({_id: req.params.id}, (err: any, image: { filename: any; }) => {
+//       if (err) return res.sendStatus(404)
+//       fs.createReadStream(path.resolve(UPLOAD_PATH, image.filename)).pipe(res)
+//     })
+//   })

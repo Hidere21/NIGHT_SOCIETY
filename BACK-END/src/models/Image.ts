@@ -1,10 +1,15 @@
-import mongoose, { Schema, model, Document } from 'mongoose'
-
+import mongoose from 'mongoose'
+const Schema = mongoose.Schema
 
 const Image = new Schema({
-    fileName : {type: String},
-    fileUrl : {type: String},
-    uploadDate : {type: Date, default: Date.now()}
-})
+  filename: {
+    type: String,
+    required: true
+  },
+  originalname: {
+    type: String,
+    required: true
+  }
+}, {timestamps: true})
 
 module.exports = mongoose.model('Image', Image)

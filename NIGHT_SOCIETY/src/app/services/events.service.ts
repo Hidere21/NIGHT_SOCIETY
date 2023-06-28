@@ -9,13 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class EventsService {
   
-  uploadImagesToServer(formData: FormData): Observable<any> {
-    const url = `${this.urlApi}/create`;
-  
-    return this.http.post(url, formData);
-  }
-
-
+ 
   urlApi = `${environment.API_URI}/event`
   eventToCreate: Event = new Event()
   // 
@@ -46,10 +40,7 @@ export class EventsService {
     return this.http.put(`${this.urlApi}/update`, dataToUpdate)
    }
 
-   uploadEventImages(){
-    return this.http.post(`${this.urlApi}/update`, FormData)
-    // boton para cargar imagens y con un get llamar a la imagen
-   }
+ 
 
 }
 
