@@ -7,6 +7,7 @@ import { CrearEventosComponent } from './routes/crear-eventos/crear-eventos.comp
 import { EventosComponent } from './routes/eventos/eventos.component';
 import { RegisterComponent } from './routes/register/register.component';
 import { LoginComponent } from './routes/login/login.component';
+import { PerfilComponent } from './routes/perfil/perfil.component';
 
 const routes: Routes = [
   { path: 'laddig', component: LaddignPageComponent },
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'createEvent', component: CrearEventosComponent },
   { path: 'events', component: EventosComponent },
   {path:'register', component: RegisterComponent},
-  {path: 'Login', component: LoginComponent}
+  {path: 'Login', component: LoginComponent},
+  {path: 'perfil', component: PerfilComponent}
 ];
 
 @NgModule({
