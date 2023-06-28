@@ -8,7 +8,7 @@
 
     <div *ngFor="let event of eventService.filterEvent" class="evento col-md-12 col-lg-5 d-flex flex-column align-items-center text-center">
       <!-- Titulo evento -->
-      <h2 class="text-titulo-evento p-3">{{event.name}}</h2>
+      <h2 class="text-titulo-evento fw-bold p-3">{{event.name}}</h2>
       <!-- carrusel images -->
       <div id="event-1" class="carousel slide w-100" data-bs-ride="true">
         <div class="carousel-indicators">
@@ -38,8 +38,8 @@
       </div>
       <!-- Datos del evento -->
       <div class="w-100 w-md-75 mt-3">
-        <p class="text-light-2">{{event.address}}</p>
-        <p class="text-light-2">Desde {{event.date_from | date}} - hasta {{event.date_to | date}} - Hora {{event.hour}}</p>
+        <p class="text-light-2">Dirección: {{event.address}}</p>
+        <p class="text-light-2 fw-bold">Desde: {{event.date_from | date}} - Hasta: {{event.date_to | date}} - Hora: {{event.hour }}</p>
         <p class="text-light-2">{{event.description}}</p>
       </div>
       <!-- comentarios -->

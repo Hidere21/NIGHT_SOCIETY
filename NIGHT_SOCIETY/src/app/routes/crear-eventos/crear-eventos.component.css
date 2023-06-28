@@ -105,7 +105,9 @@ textarea:required:valid {
       }
   }
   @media screen and (max-width: 530px) {
+
      .eventos{
+      margin-top: 4px;
       width: 400px;
       font-size: 0.5rem;
     
