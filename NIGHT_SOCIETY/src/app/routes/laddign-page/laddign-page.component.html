@@ -9,6 +9,8 @@
     <a (click)="scrollTo(Inicio)" class="active">Inicio</a>
     <a (click)="scrollTo(que_es)">¿Qué es?</a>
     <a (click)="scrollTo(porque_usar)">¿Por qué usar?</a>
+    <a (click)="scrollTo(mision)">Misión</a>
+    <a (click)="scrollTo(vision)">Visión</a>
     <a href="#" class="bt">Iniciar Sesión</a>
   </nav>
 </header>
@@ -41,10 +43,12 @@
   <div class="que-contenido">
     <h2 class="heading">¿Qué es<span> Night Society</span>?</h2>
     <p>
-      Night Society es una red social la cual te permitirá hacer amigos de forma rápida
-      y segura, podrás hacer publicaciones e interactuar con ellas. Podrás publicar eventos 
-      y hacer búsqueda del tipo de evento al que te gustaría asistir (dancehall, guaracha, techno, etc..)
-      y así mismo podrás calificar las diversas discotecas de Bogotá.
+      El confinamiento y el aislamiento que hemos vivido por la pandemia ha
+      dejado estragos en nosotros y retomar la socialización y las relaciones
+      interpersonales ha sido para algunos un camino de paciencia y empatía, de
+      ahí nace la idea de Night Society, un espacio donde podrás compartir tus
+      pensamientos y gustos de forma libre y así mismo buscar y encontrar
+      personas con las cuales puedas compartir de esto.
     </p>
   </div>
 </section>
@@ -55,26 +59,73 @@
   </div>
   <div class="usar-contenido">
     <h2 class="heading">¿Por qué usar <span>Night Society</span>?</h2>
+
     <p>
-      Night Society te permitirá compartir tus pensamientos fiesteros de forma
-      libre, así mismo podrás encontrar personas con tus mismos gustos e interactuar con ellos.
-  </p>
-    <p>
-      Night Society está diseñado para personas mayores de 18 años, que les guste estar rodeados de 
-      excelente ambiente acompañado de música y baile, aquí podrás hacer públicos tus 
-      eventos o asistir a estos, los cuales podrán llegar
-       a un sinfín de personas tales como creadores de contenido, todo tipo de géneros y hasta 
-       grandes empresarios.
+      En Night Society sabemos que muchas personas batallan, por ejemplo, para
+      interacciones verbales con desconocidos que no pasen por mensajes escritos
+      en pantalla y por convivir y mantener relaciones en contextos diferentes a
+      lo habitual. Por lo cual en Night Society queremos estimular y buscar
+      proactivamente los espacios para que los jóvenes y adultos puedan
+      expresarse no solamente mediante el intercambio verbal, sino mediante la
+      realización de eventos en conjunto, como pueden ser: cenas, fiestas,
+      juegos, caminatas, viajes, etc. Las cuales nos permitan expresar emociones
+      para poder normalizar la socialización.
     </p>
   </div>
 </section>
 
-    <!-- diseño foooter -->
-    <footer class="footer">
-      <div class="footer-text">
-        <p>Copyright &copy; 2023< By Night Society | All Rights Reserved. | <a [routerLink]="['/politicas']">Politicas de privacidad</a></p>
-      </div>
-      <div class="footer-iconTop">
-        <a (click)="scrollTo(Inicio)"><i class="fa-solid fa-arrow-up"></i></a>
-      </div>
-    </footer>
+<section class="mision" #mision>
+  <div class="about-img">
+    <img src="../../../assets/mision.png" alt="" />
+  </div>
+  <div class="que-contenido">
+    <h2 class="heading">Mis<span>ión</span>:</h2>
+    <p>
+      Si eres de los que disfruta conocer gente, asistir y/o realizar eventos,
+      reuniones y fiestas en tu ciudad, o, por el contrario, se te dificulta
+      acudir a cualquiera de estos escenarios, Night Society es indudablemente
+      una base fundamental para facilitar todo esto tipo de interacciones.
+    </p>
+    <p>
+      Nuestra aplicación es indispensable para que puedas estar al día con todos
+      los eventos de tu ciudad. Descubre los próximos eventos del día, la
+      semana, del mes o del año en un mismo lugar.
+    </p>
+  </div>
+</section>
+
+<section class="vision" #vision>
+  <div class="about-img">
+    <img src="../../../assets/Wavy_Bus-19_Single-09.jpg" alt="" />
+  </div>
+  <div class="usar-contenido">
+    <h2 class="heading">Vis<span>ión</span>:</h2>
+    <p>
+      Nuestro ideal es lograr el posicionamiento y consolidación de Night
+      Society, en el mercado en el segundo año de vida del proyecto y penetrar
+      en el mercado internacional a largo plazo.
+    </p>
+
+    <p>
+      Queremos tener efecto positivo en nuestra sociedad, buscando que estés en
+      sintonía con tu entorno y podamos ayudarte con una mejoría en tu estado de
+      ánimo, principalmente siendo responsables y poniendo como prioridad la
+      honestidad para brindarte alta seguridad a la hora de interactuar en
+      nuestra página, teniendo como finalidad permitirte expresarte
+      libremente.ón.
+    </p>
+  </div>
+</section>
+
+<!-- diseño foooter -->
+<footer class="footer">
+  <div class="footer-text">
+    <p>
+      Copyright &copy; 2023< By Night Society | All Rights Reserved. |
+      <a [routerLink]="['/politicas']">Politicas de privacidad</a>
+    </p>
+  </div>
+  <div class="footer-iconTop">
+    <a (click)="scrollTo(Inicio)"><i class="fa-solid fa-arrow-up"></i></a>
+  </div>
+</footer>
