@@ -1,6 +1,6 @@
 import  {Response, Request}  from "express";
 import userModel from "../models/user.model";
-import jwt from "jsonwebtoken"
+ import jwt from "jsonwebtoken"
 
 
 
@@ -26,6 +26,34 @@ const login =async (req: Request, res: Response) => {
     }
     
 }
+
+const getUser = async (req: Request, res: Response) => {
+    try {
+    //   // Obtener el ID del usuario autenticado desde el token
+    //   const userId = req.body;
+  
+    //   // Buscar el usuario por ID y excluir la contraseña
+    //   const user = await userModel.findById(userId, { password: 0 });
+  
+    //   // Comprobar si se encontró el usuario
+    //   if (user) {
+    //     return res.status(200).json(user);
+    //   } else {
+    //     return res.status(404).json({ message: "Usuario no encontrado" });
+    //   }
+    const { user_id } = req.params;
+    const user = await userModel.findById(user_id);
+    // validacion si el usuario no existe
+    if (!user) {
+        return res.status(404).json({ message: "Usuario no encontrado" });
+    }
+    else{
+        return res.status(404).json({ message: "Usuario  encontrado" });
+    }
+    } catch (error) {
+      return res.status(500).json({ message: error });
+    }
+  }
 
 const getAllUsers = async ( req: Request, res: Response) => {
     try {
@@ -121,4 +149,4 @@ const editFriends = async (req: Request, res: Response) => {
 };
 
 
-export { getAllUsers, getFriends, getPosibleFriends, createUser, editFriends,login };
+export { getAllUsers, getFriends, getPosibleFriends, createUser, editFriends,login, getUser };
