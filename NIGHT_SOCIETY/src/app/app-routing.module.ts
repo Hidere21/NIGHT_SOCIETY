@@ -9,6 +9,7 @@ import { RegisterComponent } from './routes/register/register.component';
 import { LoginComponent } from './routes/login/login.component';
 import { PerfilComponent } from './routes/perfil/perfil.component';
 
+
 const routes: Routes = [
   { path: 'laddig', component: LaddignPageComponent },
   { path: 'calificar', component: CalificarComponent },
@@ -23,6 +24,8 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule], 
+  
+  
 })
 export class AppRoutingModule {}

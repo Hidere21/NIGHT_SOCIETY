@@ -1,4 +1,5 @@
 export interface Event {
+    _id: string;
     name: string;
     address: string;
     date_from: Date;
@@ -6,7 +7,8 @@ export interface Event {
     hour: string;
     images: String;
     description: String;
-    opinions: []
+    opinions: [];
+    qualify: []
     }
 
 
