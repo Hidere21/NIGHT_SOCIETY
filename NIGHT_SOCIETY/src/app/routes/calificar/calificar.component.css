@@ -222,18 +222,6 @@ nav:hover{
     color: #FFC107;
   }
 
-  @media (min-width: 1001px) {
-    #mainContent{
-        margin-left: 15%;
-    }
-    
-  }
-  @media (max-width: 1000px) {
-    #mainContent{
-        margin-left: auto;
-    }
-    
-  }
   
   .btnEnviar{
     background-color: #190F40;

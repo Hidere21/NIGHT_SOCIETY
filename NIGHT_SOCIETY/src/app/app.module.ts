@@ -18,11 +18,12 @@ import { HeaderNotificationsComponent } from './components/header-notifications/
 import { AmigosModule } from './routes/amigos/amigos.module';
 import { HttpClientModule } from '@angular/common/http';
 import { EstrellasComponent } from './components/estrellas/estrellas.component';
+import { ReactiveFormsModule } from '@angular/forms';
 import { LaddignPageComponent } from './routes/laddign-page/laddign-page.component';
 import { CardHomeComponent } from './components/card-home/card-home.component';
 import { LoginComponent } from './routes/login/login.component';
 
-
+import { NgModel } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -43,9 +44,13 @@ import { LoginComponent } from './routes/login/login.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    AmigosModule
+    AmigosModule,
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
-
   providers: [],
   bootstrap: [AppComponent],
 })
