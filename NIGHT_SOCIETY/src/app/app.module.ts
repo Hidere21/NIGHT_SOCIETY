@@ -20,8 +20,14 @@ import { EstrellasComponent } from './components/estrellas/estrellas.component';
 import { LaddignPageComponent } from './routes/laddign-page/laddign-page.component';
 import { CardHomeComponent } from './components/card-home/card-home.component';
 import { LoginComponent } from './routes/login/login.component';
+<<<<<<< HEAD
 import { CardCommentComponent } from './components/card-comment/card-comment.component';
 import { from } from 'rxjs';
+=======
+
+
+import { RegisterComponent } from './routes/register/register.component';
+>>>>>>> ecaf9da6f89163a702e8ddc2ea48c8ad219c5f8f
 
 @NgModule({
   declarations: [
@@ -38,8 +44,12 @@ import { from } from 'rxjs';
     LoginComponent,
     CardCommentComponent,
     LaddignPageComponent,
+<<<<<<< HEAD
     EstrellasComponent
 
+=======
+    RegisterComponent
+>>>>>>> ecaf9da6f89163a702e8ddc2ea48c8ad219c5f8f
   ],
   imports: [
     BrowserModule,
