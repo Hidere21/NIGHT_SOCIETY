@@ -4,6 +4,7 @@ import jwt from "jsonwebtoken"
 
 
 
+
 const login =async (req: Request, res: Response) => {
 
     try {
@@ -76,18 +77,19 @@ const getPosibleFriends = async (req: Request, res: Response) => {
 };
 
 
-const createUser = async (req: Request, res: Response) => {
-    try {
-        const user = req.body;
-        const created = await userModel.create(user);
 
-        return res
-            .status(201)
-            .json({ created, message: "Usuario creado correctamente" });
-    } catch (error) {
-        return res.status(400).json({ error, message: "Error al crear el usuario" });
-    }
-};
+ const createUser = async (req: Request, res: Response) => {
+     try {
+         const user = req.body;
+         const created = await userModel.create(user);
+
+         return res
+             .status(201)
+             .json({ created, message: "Usuario creado correctamente" });
+     } catch (error) {
+         return res.status(400).json({ error, message: "Error al crear el usuario" });
+     }
+ };
 
 const editFriends = async (req: Request, res: Response) => {
     try {
