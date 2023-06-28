@@ -9,7 +9,7 @@
     <a (click)="scrollTo(Inicio)" class="active">Inicio</a>
     <a (click)="scrollTo(que_es)">¿Qué es?</a>
     <a (click)="scrollTo(porque_usar)">¿Por qué usar?</a>
-    <a href="#" class="bt">Iniciar Sesión</a>
+    <a [routerLink]="['/Login']" class="bt">Iniciar Sesión</a>
   </nav>
 </header>
 
