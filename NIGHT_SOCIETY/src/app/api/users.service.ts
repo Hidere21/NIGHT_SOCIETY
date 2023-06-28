@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import jwtDecode  from "jwt-decode"
 import {User} from "../../../../BACK-END/src/interfaces/user.interface"
 import { environment } from 'src/environments/environment.development';
+import { UserModel } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,7 @@ export class UsersService {
 
   urlApi= `${environment.API_URI}/user`
   createToUser?: User
+  userToCreate: UserModel = new UserModel()
   allUsers: User[] = []
   auth: any = {
     email: "",
@@ -23,10 +25,6 @@ export class UsersService {
     return this.http.get(`${this.urlApi}/getUsers`)
 
   }
-   createUser(data: User){
-    return this.http.post(`${this.urlApi}/create`,data)
-
-   }
    deleteUser(_id: string){
     return this.http.delete(`${this.urlApi}/delete/${_id}`)
    }
@@ -62,5 +60,9 @@ export class UsersService {
     return obj && obj.role === 'admin' ? true: false
   }
 
+
+  createUser(data: UserModel){
+    return this.http.post(`${this.urlApi}/create`, data)
+  }
 
 }

@@ -23,6 +23,7 @@ import { CardHomeComponent } from './components/card-home/card-home.component';
 import { LoginComponent } from './routes/login/login.component';
 
 
+import { RegisterComponent } from './routes/register/register.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { LoginComponent } from './routes/login/login.component';
     CardHomeComponent,
     LoginComponent,
     LaddignPageComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
