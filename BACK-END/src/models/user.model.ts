@@ -17,6 +17,7 @@ const userSchema = new Schema<User>(
         },
       ],
     },
+    studyOrWork: { type: String, required: true },
     userImage: { type: String, default: "" },
   },
   {
