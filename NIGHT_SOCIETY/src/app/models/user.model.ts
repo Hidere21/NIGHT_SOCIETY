@@ -9,6 +9,7 @@ export class UserModel {
     dateBirth?: string;
     gener?:string;
     userImage?:string;
+    estadoCivil?:string;
     studyOrWork?: string
 
 
@@ -23,6 +24,7 @@ export class UserModel {
         dateBirth = "",
         gener = "",
         userImage = "",
+        estadoCivil = "",
         studyOrWork = ""
     ){
         this.name = name;
@@ -33,6 +35,7 @@ export class UserModel {
         this.dateBirth = dateBirth;
         this.gener = gener;
         this.userImage = userImage;
+        this.estadoCivil = estadoCivil;
         this.studyOrWork = studyOrWork
     }
 

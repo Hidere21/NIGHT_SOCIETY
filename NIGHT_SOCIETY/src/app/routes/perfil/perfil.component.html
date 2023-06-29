@@ -12,7 +12,7 @@
         <div class="text-t">
             <div class="nombre" *ngIf="userInfo" >
                 <h4>Nombre:</h4>
-                <p>{{userInfo.name}}</p>
+                <p>{{userInfo.name + ' ' + userInfo.lastName}}</p>
             </div>
             <div class="fecha">
                 <h4>Fecha de nacimiento:</h4>
@@ -22,13 +22,9 @@
                 <h4>Genero:</h4>
                 <p>{{userInfo.gener}}</p>
             </div>
-            <div class="fecha-union">
-                <h4>Se unio en:</h4>
-                <p>Febrero de 2012</p>
-            </div>
             <div class="estado-civil">
                 <h4>Estado civil:</h4>
-                <p>Soltero</p>
+                <p>{{userInfo.estadoCivil}}</p>
             </div>
         </div>
         

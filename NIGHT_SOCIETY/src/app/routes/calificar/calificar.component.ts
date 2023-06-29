@@ -33,6 +33,7 @@ export class CalificarComponent {
     }
 
     console.log({data})
+    alert("Evento calificado")
 
     this.eventService.rateEvent(data).subscribe(
       (data) => {
@@ -40,5 +41,6 @@ export class CalificarComponent {
       },
       (err) => console.log(err)
     )
+    
   }
 }
