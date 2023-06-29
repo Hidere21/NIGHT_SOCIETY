@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
-// import { NgForm } from '@angular/forms';
-// import { Router } from '@angular/router';
-// import {UsersService} from "../../api/users.service"
-// import { User } from 'src/app/models/user.model';
-// import { PerfilService } from 'src/app/services/perfil.service';
+import { Component, OnInit } from '@angular/core';
+ import { NgForm } from '@angular/forms';
+ import { Router } from '@angular/router';
+ import {UsersService} from "../../api/users.service"
+ import { UserModel } from 'src/app/models/user.model';
+ import { PerfilService } from 'src/app/services/perfil.service';
 @Component({
   selector: 'app-perfil',
   templateUrl: './perfil.component.html',
@@ -11,11 +11,22 @@ import { Component } from '@angular/core';
 })
 export class PerfilComponent {
   
+  userInfo: any;
 
+  constructor(private PerfilService: PerfilService) {}
 
-
-  constructor(){
-
+  ngOnInit(): void {
+    const token = localStorage.getItem('token'); // Obtener el token almacenado en el almacenamiento local
+    if (token) {
+      this.PerfilService.getUserInfo(token).subscribe(
+        (response) => {
+          this.userInfo = response;
+        },
+        (error) => {
+          console.log('Error al obtener la información del usuario:', error);
+        }
+      );
+    }
   }
 
   // getuserInfo( id: string){
