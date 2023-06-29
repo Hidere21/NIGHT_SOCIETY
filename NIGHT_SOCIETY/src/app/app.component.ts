@@ -16,6 +16,6 @@ export class AppComponent {
     let l: any = window.location.href
     l = l.split('/')
     console.log(l)
-    return l[3] === "laddig" || l[3] === "Login" || l[3] === "register"  ? false : true
+    return l[3] === "laddig" || l[3] === "Login" || l[3] === "register" || l[3] === "politicas"  ? false : true
   }
 }

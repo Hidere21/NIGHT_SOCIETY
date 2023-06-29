@@ -31,8 +31,8 @@ export class EventosComponent {
 
       // Filtrar eventos cuya fecha sea mayor a la fecha actual
 
-      this.eventService.filterEvent = this.eventService.allEvent.filter(
-        (event) => {
+      this.eventService.filterEvent = data.result.filter(
+        (event: any) => {
           const eventDate = moment(event.date_from, 'YYYY-MM-DD').toDate();
           return eventDate > currentDate;
         }

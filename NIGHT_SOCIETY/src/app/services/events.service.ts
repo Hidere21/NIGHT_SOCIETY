@@ -9,6 +9,7 @@ import { CalificarComponent } from '../routes/calificar/calificar.component';
   providedIn: 'root',
 })
 export class EventsService {
+
   uploadImagesToServer(formData: FormData): Observable<any> {
     const url = `${this.urlApi}/create`;
 
@@ -32,8 +33,11 @@ export class EventsService {
   //   return this.http.post(`${this.urlApi}/calificar`);
   // }
 
+  
+
 
   createEvent(data: Event) {
+
     return this.http.post(`${this.urlApi}/create`, data);
   }
 

@@ -23,8 +23,9 @@ export class CrearEventosComponent implements OnInit {
   selectedImages: any;
   http: any;
 
-  constructor(public eventService: EventsService){ 
-    this.selectedImage = [];
+  constructor(public eventService: EventsService, ){ 
+    
+    // this.selectedImage = [];
    }
 
   ngOnInit(){
@@ -46,6 +47,8 @@ export class CrearEventosComponent implements OnInit {
     return total / data.length
   }
 
+
+  
   // metodo
   // ...
 
@@ -180,6 +183,7 @@ export class CrearEventosComponent implements OnInit {
 
   // Agrega un evento de cambio al campo de entrada de tipo file
 // para mostrar la imagen seleccionada
+
 
 
     getAllEvent(){

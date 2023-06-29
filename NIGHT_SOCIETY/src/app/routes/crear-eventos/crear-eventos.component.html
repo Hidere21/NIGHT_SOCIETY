@@ -35,38 +35,17 @@
           <input type="time" id="horEvent" class="form-control" required="true" name="hour" #hour="ngModel" [(ngModel)]="eventService.eventToCreate.hour" >
       </div>
   
-      <div class="mb-3 col-12 col-md-10 ">
+      <!-- <div class="mb-3 col-12 col-md-10 ">
           <label for="formFileMultiple" class="form-label">Adjuntar imagenes:</label>
           <input class="form-control" id="formFileMultiple" type="file" multiple required name="images" #images="ngModel" [(ngModel)]="eventService.eventToCreate.images" >
-      </div>
-          <!-- <input type="file" class="d-none" (change)="onPhotoSelected($event)" #photoInput>
-          <img [src]="photoSelected || 'assets/img/eventImages/no-image.png'" class="img-fluid" alt="No image"
-              (click)="photoInput.click()">
-
-          <button class="btn btn-primary btn-block">
-              Upload
-          </button> -->
-          <!-- <input class="form-control" id="formFileMultiple" type="file" multiple required name="images" (change)="handleImageChange($event)" >
-
-
-            
-      </div>
-      <div *ngIf="selectedImage">
-        <img [src]="selectedImage" alt="Imagen seleccionada" class="image-preview">
       </div> -->
 
-<!-- 
-      <div class="mb-3 col-12 col-md-10">
-        <label for="formFileMultiple" class="form-label">Adjuntar imágenes:</label>
-        <input class="form-control" id="formFileMultiple" type="file" multiple required name="images" (change)="handleImageChange($event)">
-        <div class=" d-flex">
-          <div *ngFor="let image of selectedImages" class="image-preview ">
-            <img [src]="image" alt="Imagen seleccionada" class=" mt-2">
-          </div>
-        </div>
-        <button type="button" class="btn btn-secondary mt-3 mb-4 " (click)="saveImages()">Guardar Imagens</button>
+      <div class="col-12 col-md-10">
+        <label for="inputAddress" class="form-label">Imagen: </label>
+        <input type="text" id="inputAddress" class="form-control" placeholder="URL imagen" required="true" name="images" #images="ngModel" [(ngModel)]="eventService.eventToCreate.images"  >
       </div>
-       -->
+       
+      
   
       <div class="col-12 col-md-10">
           <label for="comentariosEvent" class="form-label">Descripción: </label>
