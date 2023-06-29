@@ -45,9 +45,18 @@
       <!-- comentarios -->
       <div class="iconos-sociales d-flex flex-wrap align-items-center justify-content-center">
         
-        <a class="likes" href="#" target="" rel="noopener noreferrer">
+        <!-- <a class="likes" href="#" target="" rel="noopener noreferrer">
           <i id="likes-evento" class="bi bi-balloon-heart-fill"></i>
+        </a> -->
+
+        <a class="likes" target="" rel="noopener noreferrer" (click)="incrementarLikes()">
+          <i id="likes-evento" class="bi bi-balloon-heart-fill"></i>
+          <p id="contador-likes">{{ likes }}</p>
         </a>
+    
+        
+        
+      
        
         <a class="comentarios" href="#" target="_blank" rel="noopener noreferrer" data-bs-toggle="modal" data-bs-target="#exampleModal">
           <i id="comet-evento" class="bi bi-chat-square-dots-fill"></i>
@@ -74,4 +83,22 @@
       </div>
     </div>
   </div>
+
+  <script>
+    // Obtener los elementos HTML necesarios
+    const enlaceLikes = document.querySelector('.likes');
+    const contadorLikes = document.querySelector('#contador-likes');
+  
+    // Variable para almacenar la cantidad de likes
+    let likes = 0;
+  
+    // Agregar evento de clic al enlace
+    enlaceLikes.addEventListener('click', function() {
+      // Incrementar la cantidad de likes
+      likes++;
+  
+      // Mostrar la cantidad de likes actualizada
+      contadorLikes.textContent = likes;
+    });
+  </script>
 </section>

@@ -24,6 +24,8 @@ export class EventsService {
     return this.http.get(`${this.urlApi}/getAll`)
    }
 
+   
+
    createEvent(data: Event){
     return this.http.post(`${this.urlApi}/create`, data)
    }

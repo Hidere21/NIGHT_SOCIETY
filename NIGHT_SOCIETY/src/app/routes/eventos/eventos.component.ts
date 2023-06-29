@@ -17,6 +17,12 @@ export class EventosComponent {
     this.eventService.filterEvent = this.eventService.allEvent;
   }
 
+  likes = 0;
+
+  incrementarLikes() {
+    this.likes++;
+  }
+
   getAllEvent() {
     this.eventService.getAllEvent().subscribe((data: any) => {
       const currentDate = new Date();
@@ -47,3 +53,5 @@ export class EventosComponent {
     );
   }
 }
+
+

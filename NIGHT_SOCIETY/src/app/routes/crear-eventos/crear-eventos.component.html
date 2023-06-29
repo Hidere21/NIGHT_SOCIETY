@@ -35,16 +35,21 @@
           <input type="time" id="horEvent" class="form-control" required="true" name="hour" #hour="ngModel" [(ngModel)]="eventService.eventToCreate.hour" >
       </div>
   
+
+   <!-- <div class="col-12 col-md-6 d-flex mt-3">
+    <label for="inputImages" class="form-label">Imágenes: </label>
+    <input type="file" id="inputImages" class="form-control" required="true" name="images" #images="ngModel" (change)="onImageChange($event)" multiple>
+  </div> -->
        
-      <!-- <div class="mb-3 col-12 col-md-10 ">
+      <div class="mb-3 col-12 col-md-10 ">
           <label for="formFileMultiple" class="form-label">Adjuntar imagenes:</label>
           <input class="form-control" id="formFileMultiple" type="file" multiple required name="images" #images="ngModel" [(ngModel)]="eventService.eventToCreate.images" >
-      </div> -->
+      </div>
          
-      <div class="col-12 col-md-6 d-flex mt-3">
+      <!-- <div class="col-12 col-md-6 d-flex mt-3">
         <label for="inputext" class="form-label ">Imagenes: </label>
         <input type="text" id="inputext" class="form-control" placeholder="URL de imagen" required="true" name="images" #images="ngModel" [(ngModel)]="eventService.eventToCreate.images" >
-      </div>
+      </div> -->
   
       <div class="col-12 col-md-10">
           <label for="comentariosEvent" class="form-label">Descripción: </label>
