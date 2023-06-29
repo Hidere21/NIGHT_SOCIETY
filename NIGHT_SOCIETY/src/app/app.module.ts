@@ -19,10 +19,8 @@ import { HeaderNotificationsComponent } from './components/header-notifications/
 import { EstrellasComponent } from './components/estrellas/estrellas.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LaddignPageComponent } from './routes/laddign-page/laddign-page.component';
-import { CardHomeComponent } from './components/card-home/card-home.component';
 import { LoginComponent } from './routes/login/login.component';
 import { RegisterComponent } from './routes/register/register.component';
-import { CardCommentComponent } from './components/card-comment/card-comment.component';
 import { from } from 'rxjs';
 
 @NgModule({
@@ -36,11 +34,10 @@ import { from } from 'rxjs';
     HeaderNotificationsComponent,
     PoliticasComponent,
     NavbarComponent,
-    CardHomeComponent,
     LoginComponent,
-    CardCommentComponent,
     LaddignPageComponent,
-    EstrellasComponent
+    EstrellasComponent,
+    RegisterComponent
 
   ],
   imports: [
