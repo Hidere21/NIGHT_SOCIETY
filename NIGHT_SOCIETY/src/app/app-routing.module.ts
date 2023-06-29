@@ -12,7 +12,15 @@ import { RegisterComponent } from './routes/register/register.component';
 
 
 const routes: Routes = [
-  { path: 'ladding', component: LaddignPageComponent },
+  {path: "", redirectTo: "/laddig", pathMatch: "full"},
+  { path: 'laddig', component: LaddignPageComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  {
+    path: 'friends',
+    loadChildren: () =>
+      import('./routes/friends/friends.module').then((m) => m.FriendsModule),
+  },
   { path: 'calificar', component: CalificarComponent },
   { path: 'politicas', component: PoliticasComponent },
   { path: 'laddig', component: LaddignPageComponent },

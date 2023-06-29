@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 // Modulo de amigos
-
+import { FriendsModule } from './routes/friends/friends.module';
 
 import { AppComponent } from './app.component';
 
@@ -45,6 +45,9 @@ import { from } from 'rxjs';
     AppRoutingModule,
     FormsModule,
     BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FriendsModule,
     HttpClientModule,
     ReactiveFormsModule,
   ],

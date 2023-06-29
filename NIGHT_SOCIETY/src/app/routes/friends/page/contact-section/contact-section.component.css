@@ -1,0 +1,109 @@
+.section {
+    height: 12.5rem;
+    background: url("src/assets/img-friends/Fondo-NS.jpg") no-repeat center;
+    object-fit: cover;
+    width: 100vw;
+}
+
+.title {
+    font-size: 4.375rem;
+    font-weight: 700;
+    margin-top: 5rem;
+    color: #fff;
+}
+
+.title::selection {
+    background-color: #fff;
+    color: #190F40;
+}
+
+@media (max-width: 58.75rem) {
+    .title {
+        font-size: 3rem;
+    }
+}
+
+.main {
+    background-color: #e3e0e0;
+    object-fit: cover;
+    width: 100vw;
+    padding: 4.5rem 0px;
+}
+
+.container-cards {
+    width: 100vw;
+}
+
+.card {
+    margin: 1rem;
+    width: initial;
+    height: inherit;
+    background-color: #571673;
+    box-shadow: #0000001a 0px 4px 6px -1px, #0000000f 0px 2px 4px -1px;
+}
+
+@media(min-width: 768px) {
+    .card {
+        margin: 1rem;
+        width: 37.5rem;
+        height: 12.5rem;
+        background-color: #571673;
+        box-shadow: #0000001a 0px 4px 6px -1px, #0000000f 0px 2px 4px -1px;
+    }
+}
+
+.card-text {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media(min-width: 768px) {
+    .card-container {
+        flex-direction: row;
+    }
+}
+
+.card-body {
+    height: 100%;
+}
+
+.img-fluid {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.footer {
+    background: url("src/assets/img-friends/Fondo-NS.jpg") no-repeat center;
+    object-fit: cover;
+    width: 100vw;
+    height: 12.5rem;
+}
+
+.footer-author {
+    color: #fff;
+    font-size: 3rem;
+}
+
+.footer-author::selection {
+    background-color: #190F40;
+    color: #fff;
+}
+
+.img-facebook {
+    margin-left: 30px;
+}

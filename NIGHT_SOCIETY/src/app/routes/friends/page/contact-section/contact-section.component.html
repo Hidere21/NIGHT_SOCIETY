@@ -1,0 +1,40 @@
+<div class="overflow-hidden">
+    <!-- Navbar -->
+    <navbar-NS></navbar-NS>
+
+    <header class="section d-flex justify-content-center">
+        <h1 class="title text-center overflow-hidden">Administra tus amigos</h1>
+    </header>
+    <main class="main d-flex justify-content-center align-items-center flex-wrap">
+        <section class="container-cards d-flex justify-content-center align-items-center flex-wrap">
+            <!-- Card -->
+            <div *ngFor="let friends of myFriends" class="card">
+                <div class="card-container row g-0">
+                    <div class="col-md-4">
+                        <img [src]="friends.userImage" class="img-fluid rounded-start" [alt]="friends.name">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h2 class="card-title">{{friends.name}} {{friends.lastName}}</h2>
+                            <p class="card-text">{{friends.email}}</p>
+                            <p class="card-text">{{friends.studyOrWork}}</p>
+                            <button (click)="deleteFriends(tokenOrId)" class="btn btn-danger">Eliminar</button>
+                            <a [href]="friends.accounts">
+                                <img class="img-facebook" width="45px" height="45px"
+                                    src="assets/img-friends/facebook.png" alt="Facebook">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="footer d-flex justify-content-center">
+        <div class="d-flex justify-content-center align-items-center">
+            <span class="footer-author fw-bold">Night Society</span>
+        </div>
+    </footer>
+
+</div>

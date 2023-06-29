@@ -9,6 +9,7 @@ export class UserModel {
     dateBirth?: string;
     gener?:string;
     userImage?:string;
+    studyOrWork?: string
 
 
     //constructor
@@ -21,7 +22,8 @@ export class UserModel {
         number = "",
         dateBirth = "",
         gener = "",
-        userImage = ""
+        userImage = "",
+        studyOrWork = ""
     ){
         this.name = name;
         this.lastName = lastName;
@@ -31,6 +33,7 @@ export class UserModel {
         this.dateBirth = dateBirth;
         this.gener = gener;
         this.userImage = userImage;
+        this.studyOrWork = studyOrWork
     }
 
 

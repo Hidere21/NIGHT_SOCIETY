@@ -1,0 +1,39 @@
+<div class="">
+  <!-- Navbar -->
+  <navbar-NS></navbar-NS>
+
+  <header class="section d-flex justify-content-center">
+    <h1 class="title text-center overflow-hidden">Amigos en común</h1>
+  </header>
+  <main class="main d-flex justify-content-center align-items-center flex-wrap">
+    <section class="container-cards d-flex justify-content-center align-items-center flex-wrap">
+      <!-- Card -->
+      <div *ngFor="let suggestion of getUsers" class="card">
+        <div class="card-container row g-0">
+          <div class="col-md-4">
+            <img [src]="suggestion.userImage" class="img-fluid rounded-start" [alt]="suggestion.name">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h2 class="card-title">{{suggestion.name}}</h2>
+              <p class="card-text">{{suggestion.email}}</p>
+              <p class="card-text">{{suggestion.studyOrWork}}</p>
+              <button class="btn btn-primary">Agregar</button>
+              <a [href]="suggestion.accounts">
+                <img class="img-facebook" width="45px" height="45px" src="assets/img-friends/facebook.png"
+                  alt="Facebook">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer d-flex justify-content-center">
+    <div class="d-flex justify-content-center align-items-center">
+      <span class="footer-author fw-bold">Night Society</span>
+    </div>
+  </footer>
+
+</div>
