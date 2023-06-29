@@ -57,4 +57,8 @@ export class ContactSectionComponent implements OnInit {
         this.getFriends();
       });
   }
+
+  DeleteFriend() {
+    this.myFriends.pop();
+  }
 }

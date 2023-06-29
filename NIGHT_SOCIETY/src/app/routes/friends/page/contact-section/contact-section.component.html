@@ -1,4 +1,4 @@
-<div class="overflow-hidden">
+<div class="overflow-x-hidden">
     <!-- Navbar -->
     <navbar-NS></navbar-NS>
 
@@ -18,8 +18,8 @@
                             <h2 class="card-title">{{friends.name}} {{friends.lastName}}</h2>
                             <p class="card-text">{{friends.email}}</p>
                             <p class="card-text">{{friends.studyOrWork}}</p>
-                            <button (click)="deleteFriends(tokenOrId)" class="btn btn-danger">Eliminar</button>
-                            <a [href]="friends.accounts">
+                            <button (click)="DeleteFriend()" class="btn btn-danger">Eliminar</button>
+                            <a target="_blank" href="https://web.facebook.com/mayerandres.chavesprada/">
                                 <img class="img-facebook" width="45px" height="45px"
                                     src="assets/img-friends/facebook.png" alt="Facebook">
                             </a>

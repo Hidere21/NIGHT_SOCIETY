@@ -7,24 +7,24 @@ import { User } from '../../interfaces/user.interface';
   templateUrl: './friends-suggestion.component.html',
   styleUrls: ['./friends-suggestion.component.css'],
 })
-export class FriendsSuggestionComponent implements OnInit {
-  // Injectar el FriendsService
+export class FriendsSuggestionComponent {
   private friendsService = inject(FriendsService);
-  // Get - getUser: User[] = []
+
   public get getUsers(): User[] {
     return this.friendsService.getUsers;
   }
-  ngOnInit(): void {
-    this.getAllUser();
-  }
-  // Obteniendo todos los usuarios
-  getAllUser() {
-    this.friendsService.getAllUser().subscribe((user: User[]) => {
-      this.friendsService.getUsers = user;
-      console.log({ user });
-    });
-  }
+  // ngOnInit(): void {
+  //   this.getAllUser();
+  // }
 
-  // Agregarle un nuevo amigo a Natalia Pardo
-  addFriend() {}
+  // getAllUser() {
+  //   this.friendsService.getAllUser().subscribe((user: User[]) => {
+  //     this.friendsService.getUsers = user;
+  //     console.log({ user });
+  //   });
+  // }
+  deleteFriends() {
+    const friends = false;
+    console.log(friends);
+  }
 }

@@ -1,4 +1,4 @@
-<div class="">
+<div class="overflow-x-hidden">
   <!-- Navbar -->
   <navbar-NS></navbar-NS>
 
@@ -8,25 +8,86 @@
   <main class="main d-flex justify-content-center align-items-center flex-wrap">
     <section class="container-cards d-flex justify-content-center align-items-center flex-wrap">
       <!-- Card -->
-      <div *ngFor="let suggestion of getUsers" class="card">
+      <div class="card">
         <div class="card-container row g-0">
           <div class="col-md-4">
-            <img [src]="suggestion.userImage" class="img-fluid rounded-start" [alt]="suggestion.name">
+            <img src="assets/img-friends/Hombre2.jpg" class="img-fluid rounded-start" alt="Lucas">
           </div>
           <div class="col-md-8">
             <div class="card-body">
-              <h2 class="card-title">{{suggestion.name}}</h2>
-              <p class="card-text">{{suggestion.email}}</p>
-              <p class="card-text">{{suggestion.studyOrWork}}</p>
+              <h2 class="card-title">Lucas Campos</h2>
+              <p class="card-text">lucas@gmail.com</p>
+              <p class="card-text">Ingeniero Industrial</p>
               <button class="btn btn-primary">Agregar</button>
-              <a [href]="suggestion.accounts">
-                <img class="img-facebook" width="45px" height="45px" src="assets/img-friends/facebook.png"
-                  alt="Facebook">
+              <a target="_blank" href="https://web.facebook.com/mayerandres.chavesprada/">
+                <img class="img-facebook" width="45px" height="45px" style="margin-left: 20px;"
+                  src="assets/img-friends/facebook.png" alt="Facebook">
               </a>
             </div>
           </div>
         </div>
       </div>
+
+      <div class="card">
+        <div class="card-container row g-0">
+          <div class="col-md-4">
+            <img src="assets/img-friends/hombre.webp" class="img-fluid rounded-start" alt="Lucas">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h2 class="card-title">Leifer Mendez</h2>
+              <p class="card-text">leifermen@gmail.com</p>
+              <p class="card-text">Programador</p>
+              <button class="btn btn-primary">Agregar</button>
+              <a target="_blank" href="https://web.facebook.com/mayerandres.chavesprada/">
+                <img class="img-facebook" width="45px" height="45px" style="margin-left: 20px;"
+                  src="assets/img-friends/facebook.png" alt="Facebook">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-container row g-0">
+          <div class="col-md-4">
+            <img src="assets/img-friends/hombre3.jpg" class="img-fluid rounded-start" alt="Lucas">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h2 class="card-title">Luis Mora</h2>
+              <p class="card-text">moraluis@yahoo.com</p>
+              <p class="card-text">Derecho</p>
+              <button class="btn btn-primary">Agregar</button>
+              <a target="_blank" href="https://web.facebook.com/mayerandres.chavesprada/">
+                <img class="img-facebook" width="45px" height="45px" style="margin-left: 20px;"
+                  src="assets/img-friends/facebook.png" alt="Facebook">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-container row g-0">
+          <div class="col-md-4">
+            <img src="assets/img-friends/mujer2.jpg" class="img-fluid rounded-start" alt="Lucas">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h2 class="card-title">Maria Prada</h2>
+              <p class="card-text">mariap@gmail.com</p>
+              <p class="card-text">Enfermera</p>
+              <button class="btn btn-primary">Agregar</button>
+              <a target="_blank" href="https://web.facebook.com/mayerandres.chavesprada/">
+                <img class="img-facebook" width="45px" height="45px" style="margin-left: 20px;"
+                  src="assets/img-friends/facebook.png" alt="Facebook">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </section>
   </main>
 
