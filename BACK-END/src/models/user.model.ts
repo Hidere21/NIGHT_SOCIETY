@@ -1,5 +1,6 @@
 import { Schema, model } from "mongoose";
 import { User } from "../interfaces/user.interface";
+import mongoose from "mongoose";
 
 const userSchema = new Schema<User>(
   {
@@ -7,7 +8,10 @@ const userSchema = new Schema<User>(
     lastName: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
-    friends: { type: [String], required: true, default: [] },
+    number: {type: String, required: true},
+    dateBirth:{type: String, required: true},
+    gener:{type: String, required: true},
+    friends: { type: [String], required: false, default: [] },
     accounts: {
       type: [
         {

@@ -1,8 +1,58 @@
-import { Request, Response } from "express";
+import { Response, Request } from "express";
 import userModel from "../models/user.model";
-import path from "path";
+import jwt from "jsonwebtoken";
 
-const getAllUsers = async (_req: Request, res: Response) => {
+const login = async (req: Request, res: Response) => {
+  try {
+    let { email, password } = req.body;
+    let user: any = await userModel.findOne({ email });
+    if (!user) throw { status: 404, msg: "El usuario no existe" };
+
+    if (user.password !== password)
+      throw { status: 401, msg: "Constraseña incorrecta" };
+
+    user = user.toObject();
+    delete user.password;
+    let secret = process.env.SECRET_KEY;
+    if (!secret) throw { status: 400, msg: "No hay como encriptar el token" };
+    const token = jwt.sign(user, secret);
+    return res
+      .status(200)
+      .json({ msg: "Sesion Iniciada correctamente", token });
+  } catch (error) {
+    console.log(error);
+    return res.status(400).json({ msg: error });
+  }
+};
+
+const getUser = async (req: Request, res: Response) => {
+  try {
+    //   // Obtener el ID del usuario autenticado desde el token
+    //   const userId = req.body;
+
+    //   // Buscar el usuario por ID y excluir la contraseña
+    //   const user = await userModel.findById(userId, { password: 0 });
+
+    //   // Comprobar si se encontró el usuario
+    //   if (user) {
+    //     return res.status(200).json(user);
+    //   } else {
+    //     return res.status(404).json({ message: "Usuario no encontrado" });
+    //   }
+    const { user_id } = req.params;
+    const user = await userModel.findById(user_id);
+    // validacion si el usuario no existe
+    if (!user) {
+      return res.status(404).json({ message: "Usuario no encontrado" });
+    } else {
+      return res.status(404).json({ message: "Usuario  encontrado" });
+    }
+  } catch (error) {
+    return res.status(500).json({ message: error });
+  }
+};
+
+const getAllUsers = async (req: Request, res: Response) => {
   try {
     const users = await userModel.find({}, { password: 0 });
     // validacion ternario
@@ -62,14 +112,6 @@ const createUser = async (req: Request, res: Response) => {
     const user = req.body;
     const created = await userModel.create(user);
 
-    if (req.file) {
-      const imagePath = path.join(__dirname, req.file.path);
-      const imageUrl = `${req.protocol}://${req.get("host")}/${
-        req.file.filename
-      }`;
-      user.userImage = imageUrl
-    }
-
     return res
       .status(201)
       .json({ created, message: "Usuario creado correctamente" });
@@ -113,4 +155,12 @@ const editFriends = async (req: Request, res: Response) => {
   }
 };
 
-export { getAllUsers, getFriends, getPosibleFriends, createUser, editFriends };
+export {
+  getAllUsers,
+  getFriends,
+  getPosibleFriends,
+  createUser,
+  editFriends,
+  login,
+  getUser,
+};

@@ -8,4 +8,7 @@ export interface User {
   accounts: string[];
   studyOrWork: string;
   userImage: string;
+  number: string;
+  dateBirth: string;
+  gener: string;
 }

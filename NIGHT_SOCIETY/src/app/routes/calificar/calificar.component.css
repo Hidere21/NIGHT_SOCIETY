@@ -154,17 +154,17 @@ nav:hover{
     font-size: 18px;
     letter-spacing: 1px;
   }
-  .wrapper {
+  .star-rating {
     position: relative;
     display: inline-block;
     border: none;
-    font-size: 14px;
+    font-size: 45px;
     margin: 50px auto;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-60%);
   }
   
-  .wrapper input {
+  .star-rating input {
     border: 0;
     width: 1px;
     height: 1px;
@@ -175,7 +175,7 @@ nav:hover{
     opacity: 0;
   }
   
-  .wrapper label {
+  .star-rating label {
     cursor: pointer;
     position: relative;
     float: right;
@@ -183,7 +183,7 @@ nav:hover{
   }
   
   @media (max-width: 660px) {
-    .wrapper label:before {
+    .star-rating label:before {
         margin: 3px;
         content: "\f005";
         font-family: FontAwesome;
@@ -197,7 +197,7 @@ nav:hover{
   }
 
   @media (min-width: 661px) {
-    .wrapper label:before {
+    .star-rating label:before {
         margin: 5px;
         content: "\f005";
         font-family: FontAwesome;
@@ -210,30 +210,43 @@ nav:hover{
       }
   }
   
-  .wrapper input:checked ~ label:before {
+  .star-rating input:checked ~ label:before {
     color: #FFC107;
   }
   
-  .wrapper label:hover ~ label:before {
+  .star-rating label:hover ~ label:before {
     color: #ffdb70;
   }
   
-  .wrapper label:hover:before {
+  .star-rating label:hover:before {
     color: #FFC107;
   }
 
-  @media (min-width: 1001px) {
-    #mainContent{
-        margin-left: 15%;
-    }
-    
+  /* stars */
+  .star-rating {
+    display: inline-block;
   }
-  @media (max-width: 1000px) {
-    #mainContent{
-        margin-left: auto;
-    }
-    
+  
+  .star-rating input[type="radio"] {
+    display: none;
   }
+  
+  .star-rating label {
+    float: right;
+    cursor: pointer;
+    color: lightgray;
+  }
+  
+  .star-rating label:before {
+    content: "\2605";
+    font-size: 2em;
+  }
+  
+  .star-rating input[type="radio"]:checked ~ label {
+    color: gold;
+  }
+  
+
   
   .btnEnviar{
     background-color: #190F40;

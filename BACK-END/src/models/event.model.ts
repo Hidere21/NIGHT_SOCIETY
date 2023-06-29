@@ -7,10 +7,13 @@ const Event = new Schema({
     address: {type: String, required: true},
     date_from: {type: Date, required: true},
     date_to: {type: Date, required: true},
-    hour: {type: String, required: true},
-    images: {type: String, required: true},
+    hour: {type: [String], required: true},
+    images: {type: String, required: false},
     description: {type: String, required: true},
+    likes: {type: Number},
     opinions: {type: Array, default: []},
+    qualify: {type: Array, default: []},
+    
 },{
     timestamps: true,
     versionKey: false
