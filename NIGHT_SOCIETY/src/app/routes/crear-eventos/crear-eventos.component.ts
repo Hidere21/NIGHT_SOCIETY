@@ -36,6 +36,16 @@ export class CrearEventosComponent implements OnInit {
     this.eventService.eventToCreate = new Event()
   }
 
+  rating(data: any){
+
+    let stars: any = []
+    let total = 0
+
+    data.map((qualify: any) => stars.push(qualify.stars))
+    stars.map((elem: any) => total += elem)
+    return total / data.length
+  }
+
   // metodo
   // ...
 

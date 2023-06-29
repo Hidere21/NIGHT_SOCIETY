@@ -19,62 +19,33 @@
                 placeholder="Descripción"
                 id="DescripcionfloatingTextarea"
                 style="height: 130px"
-                
-              >
-Gracias por invitarnos a todos a tu farra Juan, la próxima vez me toca a mí, y espero que nos lo pasemos tan bien como ayer. Por cierto, el sitio era estupendo.</textarea
-              >
+                [(ngModel)]="comment"
+              ></textarea>
+              
               <label for="DescripcionfloatingTextarea">Descripción </label>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="row w-100 ">
+    <div class="row w-100 ps-4">
       <div class="col">
         <div class="form-floating d-flex">
-          <div class="wrapper m-0">
-            <input
-              name="ratingRadio"
-              type="radio"
-              id="st1"
-              value="5"
-              style="cursor: pointer"
-              [(ngModel)]="selectedRating"
-            />
-            <label for="st1"></label>
-            <input
-              name="ratingRadio"
-              type="radio"
-              id="st2"
-              value="4"
-              [(ngModel)]="selectedRating"
-            />
-            <label for="st2"></label>
-            <input
-              name="ratingRadio"
-              type="radio"
-              id="st3"
-              value="3"
-              [(ngModel)]="selectedRating"
-            />
-            <label for="st3"></label>
-            <input
-              name="ratingRadio"
-              type="radio"
-              id="st4"
-              value="2"
-              [(ngModel)]="selectedRating"
-            />
-            <label for="st4"></label>
-            <input
-              name="ratingRadio"
-              type="radio"
-              id="st5"
-              value="1"
-              [(ngModel)]="selectedRating"
-            />
-            <label for="st5"></label>
+          
+
+          <div class="star-rating">
+            <input type="radio" id="star5" name="rating" value="5" [(ngModel)]="selectedRating"/>
+            <label for="star5"></label>
+            <input type="radio" id="star4" name="rating" value="4" [(ngModel)]="selectedRating"/>
+            <label for="star4"></label>
+            <input type="radio" id="star3" name="rating" value="3" [(ngModel)]="selectedRating"/>
+            <label for="star3"></label>
+            <input type="radio" id="star2" name="rating" value="2" [(ngModel)]="selectedRating"/>
+            <label for="star2"></label>
+            <input type="radio" id="star1" name="rating" value="1" [(ngModel)]="selectedRating"/>
+            <label for="star1"></label>
           </div>
+
         </div>
       </div>
     </div>

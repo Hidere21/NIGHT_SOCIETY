@@ -222,6 +222,31 @@ nav:hover{
     color: #FFC107;
   }
 
+  /* stars */
+  .star-rating {
+    display: inline-block;
+  }
+  
+  .star-rating input[type="radio"] {
+    display: none;
+  }
+  
+  .star-rating label {
+    float: right;
+    cursor: pointer;
+    color: lightgray;
+  }
+  
+  .star-rating label:before {
+    content: "\2605";
+    font-size: 2em;
+  }
+  
+  .star-rating input[type="radio"]:checked ~ label {
+    color: gold;
+  }
+  
+
   
   .btnEnviar{
     background-color: #190F40;

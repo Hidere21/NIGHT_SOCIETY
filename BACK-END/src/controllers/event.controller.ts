@@ -3,108 +3,107 @@ import mongoose, { modelNames } from "mongoose";
 import { Request, Response } from "express";
 import eventModel from "../models/event.model";
 
-export const getEvents = async (req: Express.Request, res: Express.Response) => {
- 
+export const getEvents = async (
+  req: Express.Request,
+  res: Express.Response
+) => {
   try {
-    const result = await eventModel.find() 
-    return res.status(200).json({result})
-
+    const result = await eventModel.find();
+    return res.status(200).json({ result });
   } catch (error) {
-    console.log(error)
-    return res.status(200).json({ msg: "ha ocurrido un error en el api", error });
+    console.log(error);
+    return res
+      .status(200)
+      .json({ msg: "ha ocurrido un error en el api", error });
   }
 };
 
-
-
 export const getEvent = async (req: Express.Request, res: Express.Response) => {
- 
   try {
-
-    const resultado = await eventModel.findOne([NamedNodeMap]) 
-    if(resultado){
-    return res.status(200).json({resultado})
-    }else{
-      return res.status(200).json({msg: "El evento no existe"})
+    const resultado = await eventModel.findOne([NamedNodeMap]);
+    if (resultado) {
+      return res.status(200).json({ resultado });
+    } else {
+      return res.status(200).json({ msg: "El evento no existe" });
     }
-
   } catch (error) {
     // console.log(error)
     return res.status(400).json({ msg: "Ha ocurrido un error", error });
   }
 };
 
-
-export const createEvent = async (req: Express.Request, res: Express.Response) => {
-  
+export const createEvent = async (
+  req: Express.Request,
+  res: Express.Response
+) => {
   try {
+    console.log(req.file);
 
-    console.log(req.file)
+    let newEvent = req.body;
 
-    let newEvent = req.body
+    const eventCreated = await eventModel.create(newEvent);
 
-    const eventCreated = await eventModel.create(newEvent)
-
-    if(eventCreated) return res.status(201).json({ msg: "evento creado"})
+    if (eventCreated) return res.status(201).json({ msg: "evento creado" });
     // mostar una exepcion si hay error
-    throw {msg: "Error al crear el evento"}
-
+    throw { msg: "Error al crear el evento" };
   } catch (error) {
-    console.log(error)
+    console.log(error);
     return res.status(400).json({ msg: "ha ocurrido un error", error });
   }
 };
 
-
-
-
-
-
-export const updateEvent = async (req: Express.Request, res: Express.Response) => {
-  
+export const updateEvent = async (
+  req: Express.Request,
+  res: Express.Response
+) => {
   try {
+    let { dataToUpdate, _id } = req.body;
 
-    let {dataToUpdate, _id} = req.body
+    const updateData = await eventModel.findByIdAndUpdate(_id, dataToUpdate);
 
-    const updateData = await eventModel.findByIdAndUpdate(_id, dataToUpdate)
-
-    return res.status(204).json({ msg: "Evento actualizado"})
-
+    return res.status(204).json({ msg: "Evento actualizado" });
   } catch (error) {
-    console.log(error)
-    return res.status(400).json({ msg: "ha ocurrido un error al actualizar", error });
-  } 
-};
-
-export const rateEvent = async (req: Express.Request, res: Express.Response) => {
-  
-  try {
-
-    let {stars, _id, user_id, comment} = req.body
-
-    const event = await eventModel.findById(_id)
-    
-    if(event) event.qualify = [...event.qualify, {stars, user_id, comment}] 
-
-    return res.status(204).json({ msg: "Evento calificado"})
-
-  } catch (error) {
-    console.log(error)
-    return res.status(400).json({ msg: "ha ocurrido un error al actualizar", error });
-  } 
-};
-
-export const like =async (req: Express.Request, res: Express.Response) => {
-  try {
-    let {_id ,likes} =req.body
-    const updateLikes = await eventModel.findOneAndUpdate(_id, likes)
-    return res.status(204).json({msg: "Like agregado"})
-
-  } catch (error) {
-    
+    console.log(error);
+    return res
+      .status(400)
+      .json({ msg: "ha ocurrido un error al actualizar", error });
   }
-  
-}
+};
+
+export const rateEvent = async (
+  req: Express.Request,
+  res: Express.Response
+) => {
+  try {
+    let { stars, _id, user_id, comment } = req.body;
+    let newQualify = [];
+
+    const event: any = await eventModel.findById(_id);
+    console.log({ event });
+
+    if (event) {
+      newQualify = [...event.qualify, { stars, user_id, comment }];
+      event.qualify = newQualify;
+    }
+
+    const updated = await eventModel.findByIdAndUpdate(_id, event);
+
+    return res.status(201).json({ msg: "Evento calificado", updated });
+  } catch (error) {
+    console.log(error);
+    return res
+      .status(400)
+      .json({ msg: "ha ocurrido un error al actualizar", error });
+  }
+};
+
+export const like = async (req: Express.Request, res: Express.Response) => {
+  try {
+    let { _id, likes } = req.body;
+    const updateLikes = await eventModel.findOneAndUpdate(_id, likes);
+    return res.status(204).json({ msg: "Like agregado" });
+  } catch (error) {}
+};
 
 // export const uploadImageAndCreateEvent = async (req: Request, res: Response) => {
 //   try {
@@ -133,7 +132,6 @@ export const like =async (req: Express.Request, res: Express.Response) => {
 //   }
 // };
 
-
 // export const uploadImageEvent = async (req: Express.Request, res: Express.Response) => {
 //   try {
 //     let {file} = req
@@ -156,5 +154,3 @@ export const like =async (req: Express.Request, res: Express.Response) => {
 //     return res.status(400).json({ msg: "ha ocurrido un error al eliminar", error });
 //   }
 // }
-  
-

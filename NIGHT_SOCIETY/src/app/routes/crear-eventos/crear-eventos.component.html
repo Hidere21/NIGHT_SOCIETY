@@ -98,6 +98,7 @@
           <!-- <th class="text-center" scope="col">HORA</th>
           <th class="text-center" scope="col">DESCIPCION</th> -->
           <th class="text-center" scope="col">ACCIONES</th>
+          <th class="text-center" scope="col">CALIFICACIÓN</th>
         </tr>
       </thead>
       <tbody>
@@ -111,6 +112,7 @@
        
           <!-- <td><button type="button" class="btn btn-danger" (click)="deleteProduct(product._id || '')">Eliminar</button></td> -->
           <td><button type="button" class="btn btn-primary" (click)="updateEvent(event)" >Editar</button></td>
+          <td class="text-center" > {{event.qualify && event.qualify.length > 0 ? "⭐ " + (rating(event.qualify) | number: '1.1-1') : "Sin calificación"}}</td>
         </tr> 
       </tbody>
     </table>

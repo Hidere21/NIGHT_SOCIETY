@@ -20,6 +20,7 @@ export class EventsService {
   //
   allEvent: Event[] = [];
   filterEvent: Event[] = [];
+  rate: number = 0
 
   constructor(private http: HttpClient) {}
 
