@@ -28,33 +28,40 @@ const login =async (req: Request, res: Response) => {
     
 }
 
-const getUser = async (req: Request, res: Response) => {
+const getUserInfo = async (req: Request, res: Response) => {
     try {
-    //   // Obtener el ID del usuario autenticado desde el token
-    //   const userId = req.body;
+      const token = req.headers.authorization; // Obtener el token del encabezado de autorización
+      if (!token) throw { status: 401, msg: 'No se proporcionó un token de autenticación' };
   
-    //   // Buscar el usuario por ID y excluir la contraseña
-    //   const user = await userModel.findById(userId, { password: 0 });
+      const secret = process.env.SECRET_KEY;
+      if (!secret) throw { status: 500, msg: 'La clave secreta no está configurada' };
   
-    //   // Comprobar si se encontró el usuario
-    //   if (user) {
-    //     return res.status(200).json(user);
-    //   } else {
-    //     return res.status(404).json({ message: "Usuario no encontrado" });
-    //   }
-    const { user_id } = req.params;
-    const user = await userModel.findById(user_id);
-    // validacion si el usuario no existe
-    if (!user) {
-        return res.status(404).json({ message: "Usuario no encontrado" });
-    }
-    else{
-        return res.status(404).json({ message: "Usuario  encontrado" });
-    }
+      const decoded: any = jwt.verify(token, secret); // Verificar y decodificar el token
+      const userId: string = decoded._id; // Suponiendo que el campo _id contiene el ID del usuario
+  
+      const user = await userModel.findById(userId); // Obtener el usuario de la base de datos
+  
+      if (!user) throw { status: 404, msg: 'El usuario no existe' };
+  
+      // Devolver la información del usuario sin la contraseña
+      const userInfo = {
+        id: user._id,
+        email: user.email,
+        name: user.name,
+        lastName:user.lastName,
+        number: user.number,
+        gener:user.gener,
+        dateBirth: user.dateBirth,
+        userImage: user.userImage
+        // Agregar más propiedades si es necesario
+      };
+  
+      return res.status(200).json(userInfo);
     } catch (error) {
+      console.log(error);
       return res.status(500).json({ message: error });
     }
-  }
+  };
 
 const getAllUsers = async ( req: Request, res: Response) => {
     try {
@@ -151,4 +158,4 @@ const editFriends = async (req: Request, res: Response) => {
 };
 
 
-export { getAllUsers, getFriends, getPosibleFriends, createUser, editFriends,login, getUser };
+export { getAllUsers, getFriends, getPosibleFriends, createUser, editFriends,login,getUserInfo};
