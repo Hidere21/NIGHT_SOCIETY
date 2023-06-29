@@ -35,30 +35,16 @@
           <input type="time" id="horEvent" class="form-control" required="true" name="hour" #hour="ngModel" [(ngModel)]="eventService.eventToCreate.hour" >
       </div>
   
-       <!-- <div class="mb-3 col-12 col-md-10 ">
-        <label for="inputImages" class="form-label">Imágenes:</label>
-        <input type="file" id="inputImages" required="true" class="form-control" name="images" (change)="getFile($event)" multiple>
-      </div> -->
-
-      <div class="mb-3 col-12 col-md-10 ">
+       
+      <!-- <div class="mb-3 col-12 col-md-10 ">
           <label for="formFileMultiple" class="form-label">Adjuntar imagenes:</label>
           <input class="form-control" id="formFileMultiple" type="file" multiple required name="images" #images="ngModel" [(ngModel)]="eventService.eventToCreate.images" >
-      </div>
-         
-      <!-- <div class="col-12 col-md-10">
-        <label for="inputImages" class="form-label">Imágenes:</label>
-        <input type="file" id="inputImages" class="form-control" name="images" (change)="onFileChange($event)" multiple>
-
-        <div *ngIf="selectedImages.length > 0" class="mt-2">
-          <h6>Imágenes seleccionadas:</h6>
-          <div class="horizontal-images">
-            <div *ngFor="let image of imageUrls">
-              <img [src]="image.url" alt="Preview" class="preview-image">
-            </div>
-          </div>
-        </div>
       </div> -->
-      
+         
+      <div class="col-12 col-md-6 d-flex mt-3">
+        <label for="inputext" class="form-label ">Imagenes: </label>
+        <input type="text" id="inputext" class="form-control" placeholder="URL de imagen" required="true" name="images" #images="ngModel" [(ngModel)]="eventService.eventToCreate.images" >
+      </div>
   
       <div class="col-12 col-md-10">
           <label for="comentariosEvent" class="form-label">Descripción: </label>
@@ -101,7 +87,7 @@
        
           <!-- <td><button type="button" class="btn btn-danger" (click)="deleteProduct(product._id || '')">Eliminar</button></td> -->
           <td><button type="button" class="btn btn-primary" (click)="updateEvent(event)" >Editar</button></td>
-          <td class="text-center" >{{event.qualify}}</td>
+          
         </tr> 
       </tbody>
     </table>
