@@ -49,7 +49,8 @@ const getUserInfo = async (req: Request, res: Response) => {
         number: user.number,
         gener:user.gener,
         dateBirth: user.dateBirth,
-        userImage: user.userImage
+        userImage: user.userImage,
+        estadoCivil: user.estadoCivil
         // Agregar más propiedades si es necesario
       };
   

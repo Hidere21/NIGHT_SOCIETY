@@ -11,6 +11,7 @@ const userSchema = new Schema<User>(
     number: {type: String, required: true},
     dateBirth:{type: String, required: true},
     gener:{type: String, required: true},
+    estadoCivil:{type: String, required: true},
     friends: { type: [String], required: false, default: [] },
     accounts: {
       type: [

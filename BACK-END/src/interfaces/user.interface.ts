@@ -11,4 +11,5 @@ export interface User {
   number: string;
   dateBirth: string;
   gener: string;
+  estadoCivil: string;
 }
