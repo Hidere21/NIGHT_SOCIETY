@@ -4,12 +4,15 @@ import "dotenv/config";
 import cors from "cors";
 import morgan from "morgan";
 import dataBase from "./config/database";
-import apiRoutes from "./routes/index"
-import multer, { Multer } from 'multer';
 import path from 'path'
+import apiRoutes from "./routes/index";
+import Event from "./models/event.model";
+import eventRoutes from "./routes/event.routes";
 
 const app = express();
 dotenv.config();
+
+
 
 const PORT = process.env.PORT || 3001;
 
@@ -18,27 +21,22 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 app.use(morgan("dev"));
 
-// Configuración de Multer
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-      cb(null, `${__dirname}/../uploads`); // Ruta donde se guardarán los archivos subidos
-    },
-    filename: (req, file, cb) => {
-      cb(null, Date.now() + '-' + file.originalname); // Nombre de archivo único
-    }
-  });
-
-const upload: Multer = multer({ storage });
-
 // Rutas
 app.use("/api", apiRoutes);
 app.use(express)
 
-
+app.use('/api/eventos', eventRoutes);
 
 // Base de datos
 dataBase();
 
+// app.use(express.static(path.join(__dirname, 'src/uploads')))
+// app.use(require('./routes/event.routes'))
+
+
+
 app.listen(PORT, () => {
     console.log(`Server on port ${PORT}`);
 });
+
+

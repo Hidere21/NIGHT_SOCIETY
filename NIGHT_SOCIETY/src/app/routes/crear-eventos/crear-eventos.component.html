@@ -3,102 +3,116 @@
 <div class="vh-100 d-flex justify-content-center align-items-center">
     
     <form #eventForm="ngForm" (ngSubmit)="createOrUpdateEvent(eventForm)" class="w-50 row container-crear-evento d-flex justify-content-center align-items-center">
-      <div class=" d-flex justify-content-center icon-craer-evento">
+      <div class=" d-flex justify-content-center gap-3 icon-craer-evento">
           <i class="bi bi-calendar-plus-fill"></i>
+          <h2 class="fw-bold">Crear Evento</h2> 
      </div>
-      <div class="crear-evento m-auto col-12 d-flex justify-content-center">
-          <h2 class="fw-bold">Crear Evento</h2>   
-      </div>
-  
+      
       <div class="col-12 col-md-10">
         <input type="text" hidden name="_id" #_id="ngModel" [(ngModel)]="eventService.eventToCreate._id"  />
         <label for="inputext" class="form-label ">Nombre: </label>
-        <input type="text" id="inputext" class="form-control" placeholder="Nombre evento" required="" name="name" #name="ngModel" [(ngModel)]="eventService.eventToCreate.name" >
+        <input type="text" id="inputext" class="form-control" placeholder="Nombre evento" required="true" name="name" #name="ngModel" [(ngModel)]="eventService.eventToCreate.name" >
+     
       </div>
      
       <div class="col-12 col-md-10">
         <label for="inputAddress" class="form-label">Dirección: </label>
-        <input type="text" id="inputAddress" class="form-control" placeholder="Dirección" required="" name="address" #address="ngModel" [(ngModel)]="eventService.eventToCreate.address"  >
+        <input type="text" id="inputAddress" class="form-control" placeholder="Dirección" required="true" name="address" #address="ngModel" [(ngModel)]="eventService.eventToCreate.address"  >
       </div>
   
-      <div class="col-12 col-md-5">
-        <label for="inputDate1" class="form-label">Fecha Desde: </label>
-        <input type="date" id="inputDate1" class="form-control" required="" name="date_from" #date_from="ngModel" [(ngModel)]="eventService.eventToCreate.date_from" >
+      <div class="col-12 col-md-3">
+        <label for="inputDate" class="form-label">Fecha Desde: </label>
+        <input type="date" id="inputDate" class="form-control" required="true" name="date_from" #date_from="ngModel" [(ngModel)]="eventService.eventToCreate.date_from" >
       </div>
 
-      <div class="col-12 col-md-5">
+      <div class="col-12 col-md-3">
         <label for="inputDate2" class="form-label">Fecha Hasta: </label>
-        <input type="date" id="inputDate2" class="form-control" required="" name="date_to" #date_to="ngModel" [(ngModel)]="eventService.eventToCreate.date_to" >
+        <input type="date" id="inputDate2" class="form-control" required="true" name="date_to" #date_to="ngModel" [(ngModel)]="eventService.eventToCreate.date_to" >
       </div>
   
-      <div class="col-12 col-md-5">
+      <div class="col-12 col-md-3">
           <label for="horEvent" class="form-label">Hora: </label>
-          <input type="time" id="horEvent" class="form-control" required="" name="hour" #hour="ngModel" [(ngModel)]="eventService.eventToCreate.hour" >
+          <input type="time" id="horEvent" class="form-control" required="true" name="hour" #hour="ngModel" [(ngModel)]="eventService.eventToCreate.hour" >
       </div>
   
-      <div class="mb-3 col-12 col-md-10">
+      <div class="mb-3 col-12 col-md-10 ">
           <label for="formFileMultiple" class="form-label">Adjuntar imagenes:</label>
-          <input class="form-control" id="formFileMultiple" type="file" multiple required="" name="images" #images="ngModel" [(ngModel)]="eventService.eventToCreate.images" >
+          <input class="form-control" id="formFileMultiple" type="file" multiple required name="images" #images="ngModel" [(ngModel)]="eventService.eventToCreate.images" >
+      </div>
+          <!-- <input type="file" class="d-none" (change)="onPhotoSelected($event)" #photoInput>
+          <img [src]="photoSelected || 'assets/img/eventImages/no-image.png'" class="img-fluid" alt="No image"
+              (click)="photoInput.click()">
+
+          <button class="btn btn-primary btn-block">
+              Upload
+          </button> -->
+          <!-- <input class="form-control" id="formFileMultiple" type="file" multiple required name="images" (change)="handleImageChange($event)" >
+
+
+            
+      </div>
+      <div *ngIf="selectedImage">
+        <img [src]="selectedImage" alt="Imagen seleccionada" class="image-preview">
+      </div> -->
+
+<!-- 
+      <div class="mb-3 col-12 col-md-10">
+        <label for="formFileMultiple" class="form-label">Adjuntar imágenes:</label>
+        <input class="form-control" id="formFileMultiple" type="file" multiple required name="images" (change)="handleImageChange($event)">
+        <div class=" d-flex">
+          <div *ngFor="let image of selectedImages" class="image-preview ">
+            <img [src]="image" alt="Imagen seleccionada" class=" mt-2">
+          </div>
         </div>
+        <button type="button" class="btn btn-secondary mt-3 mb-4 " (click)="saveImages()">Guardar Imagens</button>
+      </div>
+       -->
   
       <div class="col-12 col-md-10">
           <label for="comentariosEvent" class="form-label">Descripción: </label>
-         <textarea class="form-control" id="comentariosEvent" placeholder="Descripción" required="" name="description" #description="ngModel" [(ngModel)]="eventService.eventToCreate.description" ></textarea>
+         <textarea class="form-control" id="comentariosEvent" placeholder="Descripción" required="true" name="description" #description="ngModel" [(ngModel)]="eventService.eventToCreate.description" ></textarea>
       </div>
          
-      <!-- <div class="col-12 d-flex justify-content-center "> -->
-        <!-- Button trigger modal -->
-          <button type="submit" class="btn btn-primary mt-3 mb-4 w-25" >
+   
+          <button type="submit" class="btn btn-secondary mt-3 mb-4 w-25 fw-bold" >
                Crear  
           </button>
-    
-          <!-- Modal -->
-          <!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-              <div class="modal-dialog">
-              <div class="modal-content ">
-                  <div class="modal-header conf-crear-evento ">
-                  <h1 class="modal-title fs-5 fw-bold " id="staticBackdropLabel">Seguro desea crear el evento</h1>
-                  <button type="button" class="btn-close bg-white conf-crear-evento" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body text-center fw-light">
-                  Una vez creado el evento, sera publicado. <br>
-                  Desea Continuar ?
-                  </div>
-                  <div class="modal-footer conf-crear-evento">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">NO</button>
-                      <a href="eventos.html" rel="noopener noreferrer">
-                  <button type="button" class="btn btn-primary fw-bold"> SI </button>
-                      </a>
-                  </div>
-              </div>
-              </div>
-          </div> -->
-      <!-- </div> -->
+
     </form>
   
   </div>
   
 
+  <h2 class="d-flex justify-content-center mt-5 fw-bold color_event" >Mis EVENTOS</h2>
+
 
   <div class="d-flex justify-content-center mt-5">
-    <table class="table table-borderless w-75 border" >
-      <thead>
+    
+    <table class="table table-event table-striped  w-75 border border-radios" >
+      <thead class="thead-event">
         <tr>
-          <th class="text-center" scope="col">NAME</th>
-          <th class="text-center" scope="col">_id</th>
+          <th class="text-center " scope="col">EVENTO</th>
+          <!-- <th class="text-center" scope="col">_id</th> -->
           <th class="text-center" scope="col">FECHA DESDE</th>
           <th class="text-center" scope="col">FECHA HASTA</th>
+          <!-- <th class="text-center" scope="col">HORA</th>
+          <th class="text-center" scope="col">DESCIPCION</th> -->
+          <th class="text-center" scope="col">ACCIONES</th>
+          <th class="text-center" scope="col">CALIFICACIÓN</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let event of eventService.allEvent">
-          <td >{{event.name}}</td>
-          <td >{{event._id}}</td>
-          <td >{{event.date_from}}</td>
-          <td >{{event.date_to}}</td>
+          <td class="text-center" >{{event.name}}</td>
+          <!-- <td >{{event._id}}</td> -->
+          <td class="text-center" >{{event.date_from | date}} </td>
+          <td class="text-center" >{{event.date_to | date}}</td>
+          <!-- <td >{{event.hour}}</td>
+          <td >{{event.description}}</td> -->
        
           <!-- <td><button type="button" class="btn btn-danger" (click)="deleteProduct(product._id || '')">Eliminar</button></td> -->
-          <td><button type="button" class="btn btn-primary" (click)="createOrUpdateEvent(eventForm)" >Editar</button></td>
+          <td><button type="button" class="btn btn-primary" (click)="updateEvent(event)" >Editar</button></td>
+          <td class="text-center" > {{event.qualify && event.qualify.length > 0 ? "⭐ " + (rating(event.qualify) | number: '1.1-1') : "Sin calificación"}}</td>
         </tr> 
       </tbody>
     </table>

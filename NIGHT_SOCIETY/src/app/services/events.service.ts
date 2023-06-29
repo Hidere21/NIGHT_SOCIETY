@@ -1,39 +1,60 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
-import { Event } from '../models/event.model';
+import { HttpClient } from '@angular/common/http';
+import { Event } from '../models/eventN.model';
 import { environment } from 'src/environments/environment.development';
+import { Observable } from 'rxjs';
+import { CalificarComponent } from '../routes/calificar/calificar.component';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class EventsService {
-  
-  urlApi = `${environment.API_URI}/event`
-  eventToCreate: Event = new Event()
-  // 
-  allEvent: Event[] = []
+  uploadImagesToServer(formData: FormData): Observable<any> {
+    const url = `${this.urlApi}/create`;
 
-  constructor(private http: HttpClient ) { }
+    return this.http.post(url, formData);
+  }
+
+  urlApi = `${environment.API_URI}/event`;
+  eventToCreate: Event = new Event();
+  //
+  allEvent: Event[] = [];
+  filterEvent: Event[] = [];
+  rate: number = 0
+
+  constructor(private http: HttpClient) {}
+
+  getAllEvent() {
+    return this.http.get(`${this.urlApi}/getAll`);
+  }
+
+  // getCalificarEvent() {
+  //   return this.http.post(`${this.urlApi}/calificar`);
+  // }
 
 
-  getAllEvent(){
-    return this.http.get(`${this.urlApi}/getAll`)
-   }
+  createEvent(data: Event) {
+    return this.http.post(`${this.urlApi}/create`, data);
+  }
 
-   createEvent(data: Event){
-    return this.http.post(`${this.urlApi}/create`, data)
-   }
+  rateEvent(data: any) {
+    return this.http.put(`${this.urlApi}/calificar`, data);
+  }
 
   //  deleteEvent(_id: string){
   //   return this.http.delete(`${this.urlApi}/delete/${_id}`)
   //  }
 
-   updateEvent(data: Event){
+  updateEvent(data: Event) {
     let dataToUpdate = {
       _id: data._id,
-      dataToUpdate: data
-    }
-    return this.http.put(`${this.urlApi}/update`, dataToUpdate)
-   }
+      dataToUpdate: data,
+    };
+    return this.http.put(`${this.urlApi}/update`, dataToUpdate);
+  }
 
+  uploadEventImages() {
+    return this.http.post(`${this.urlApi}/update`, FormData);
+    // boton para cargar imagens y con un get llamar a la imagen
+  }
 }

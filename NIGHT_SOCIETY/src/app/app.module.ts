@@ -1,5 +1,6 @@
-import { NgModule } from '@angular/core';
+import { NgModule, OnInit } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 // Modulo de amigos
@@ -15,13 +16,14 @@ import { HomeComponent } from './routes/home/home.component';
 import { PoliticasComponent } from './routes/politicas/politicas.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeaderNotificationsComponent } from './components/header-notifications/header-notifications.component';
-
+import { EstrellasComponent } from './components/estrellas/estrellas.component';
+import { ReactiveFormsModule } from '@angular/forms';
 import { LaddignPageComponent } from './routes/laddign-page/laddign-page.component';
 import { CardHomeComponent } from './components/card-home/card-home.component';
 import { LoginComponent } from './routes/login/login.component';
-import { FormsModule } from '@angular/forms';
-
-import { ButtonComponent } from './components/button/button.component';
+import { RegisterComponent } from './routes/register/register.component';
+import { CardCommentComponent } from './components/card-comment/card-comment.component';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -36,17 +38,18 @@ import { ButtonComponent } from './components/button/button.component';
     NavbarComponent,
     CardHomeComponent,
     LoginComponent,
+    CardCommentComponent,
     LaddignPageComponent,
-    ButtonComponent,
-    LaddignPageComponent,
+    EstrellasComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

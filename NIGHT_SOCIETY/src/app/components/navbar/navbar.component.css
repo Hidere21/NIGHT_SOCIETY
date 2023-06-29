@@ -10,8 +10,81 @@
   font-family: "Poppins", sans-serif;
 }
 
-.my-nav ul {
-  padding-left: 0;
+.my-nav ul{
+    padding-left: 0;
+}
+.my-nav li{
+    list-style: none;
+    content: initial;
+}
+.my-nav li a{
+    text-decoration: none;
+}
+.my-nav{
+ position: absolute;
+ top: 0;
+ bottom: 0;
+ height: 100%;
+ left: 0;
+ background: #190F40;
+ width: 90px;
+ overflow: hidden;
+ transition: width 0.2s linear;
+ box-shadow: 0 20px 35px rgba(0, 0, 0,0.1);
+ z-index: 100;
+}
+.logo {
+  text-align: center;
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  transition: all 0.5s ease;
+  height: 100%;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+}
+
+.logo span {
+  font-weight: bold;
+  padding-left: 20px;
+  font-size: 15px;
+  text-transform: uppercase;
+  margin-bottom: 2em;
+}
+
+
+.my-nav a{
+    position: relative;
+    color: white;
+    font-size: 14px;
+    display: table;
+    width: 300px;
+    padding: 10px;
+}
+.fas{
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 14px;
+    font-size: 20px;
+    text-align: center;
+}
+.obj-sidebar{
+    position: relative;
+    top: 12px;
+    margin-left: 10px;
+}
+.my-nav li a:hover{
+    background: #571673;
+}
+nav:hover{
+    width: 280px;
+    transition: all 0.5s;
 }
 
 .my-nav li {

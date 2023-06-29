@@ -4,7 +4,6 @@ import { User } from '../interfaces/user.interface';
 import jwtDecode from 'jwt-decode';
 import { environment } from 'src/environments/environment.development';
 import { FriendsData } from '../interfaces/data.interface';
-
 @Injectable({
   providedIn: 'root',
 })
