@@ -35,8 +35,8 @@ export class ContactSectionComponent implements OnInit {
 
   getPosibleFriends() {
     const _id = this.tokenOrId;
-    this.friendsService.getPosibleFriends(_id).subscribe((data: User[]) => {
-      this.friendsService.myFriends = data;
+    this.friendsService.getPosibleFriends(_id).subscribe((data: any) => {
+      this.friendsService.myFriends = data.posibleFriends;
       console.log({ data });
     });
   }

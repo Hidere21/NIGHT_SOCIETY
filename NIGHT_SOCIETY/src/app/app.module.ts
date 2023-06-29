@@ -22,6 +22,11 @@ import { LaddignPageComponent } from './routes/laddign-page/laddign-page.compone
 import { LoginComponent } from './routes/login/login.component';
 import { RegisterComponent } from './routes/register/register.component';
 import { from } from 'rxjs';
+import { NavbarNSComponent } from './routes/friends/components/navbar-ns/navbar-ns.component';
+import { ChatComponent } from './routes/friends/page/chat/chat.component';
+import { FriendsSuggestionComponent } from './routes/friends/page/friends-suggestion/friends-suggestion.component';
+import { ContactSectionComponent } from './routes/friends/page/contact-section/contact-section.component';
+import { LandingFriendsComponent } from './routes/friends/page/landing-friends/landing-friends.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +42,12 @@ import { from } from 'rxjs';
     LoginComponent,
     LaddignPageComponent,
     EstrellasComponent,
-    RegisterComponent
+    RegisterComponent,
+    NavbarNSComponent,
+    ChatComponent,
+    FriendsSuggestionComponent,
+    ContactSectionComponent,
+    LandingFriendsComponent
 
   ],
   imports: [
@@ -47,7 +57,7 @@ import { from } from 'rxjs';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FriendsModule,
+    //FriendsModule,
     HttpClientModule,
     ReactiveFormsModule,
   ],
