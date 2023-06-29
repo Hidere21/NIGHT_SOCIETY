@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 // Modulo de amigos
-import { FriendsModule } from './routes/friends/friends.module';
+// import { FriendsModule } from './routes/friends/friends.module';
 
 import { AppComponent } from './app.component';
 
@@ -23,10 +23,10 @@ import { LoginComponent } from './routes/login/login.component';
 import { RegisterComponent } from './routes/register/register.component';
 import { from } from 'rxjs';
 import { NavbarNSComponent } from './routes/friends/components/navbar-ns/navbar-ns.component';
-import { ChatComponent } from './routes/friends/page/chat/chat.component';
 import { FriendsSuggestionComponent } from './routes/friends/page/friends-suggestion/friends-suggestion.component';
 import { ContactSectionComponent } from './routes/friends/page/contact-section/contact-section.component';
 import { LandingFriendsComponent } from './routes/friends/page/landing-friends/landing-friends.component';
+import { FriendsRoutingModule } from './routes/friends/friends-routing.module';
 
 @NgModule({
   declarations: [
@@ -44,11 +44,9 @@ import { LandingFriendsComponent } from './routes/friends/page/landing-friends/l
     EstrellasComponent,
     RegisterComponent,
     NavbarNSComponent,
-    ChatComponent,
     FriendsSuggestionComponent,
     ContactSectionComponent,
-    LandingFriendsComponent
-
+    LandingFriendsComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,6 +58,7 @@ import { LandingFriendsComponent } from './routes/friends/page/landing-friends/l
     //FriendsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FriendsRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
