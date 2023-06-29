@@ -1,8 +1,9 @@
 import { Component, Input } from '@angular/core';
-import { NgModel } from '@angular/forms';
+import { NgModel, NgForm } from '@angular/forms';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { EventsService } from 'src/app/services/events.service';
 import { Router } from '@angular/router';
+import { Event } from '../../models/event.model';
 
 @Component({
   selector: 'app-card-home',
@@ -21,46 +22,42 @@ export class CardHomeComponent   {
   }
 
 
-  urlImages: string = ""
-  urlImagesObject: any[] = []
+
+
   comment: string = ""
   comments: string[] = []
   comments_count: number = 0
-  currentObject: any
-  result: any
-  number:number = 0
+  _id:number = 0
+
 
 
   getData(){
+    this.event.getAllEvent().subscribe((data: any) =>{
+      this.event.allEvent = data.result || []
+      console.log(data)})
 
-    this.event.getAllEvent().subscribe(
-      (data)=>{
-        this.result =data
-
-
-
-        this.urlImagesObject = this.result.result
-
-        console.log(this.result.result);
-        for(let i = 0; i< this.urlImagesObject.length; i++){
-          this.urlImages = this.result.result[2].images
-          console.log(this.urlImages)
-        }
-
-
-
-
-
-}
-
-
-
-      )
   }
 
   likes: number = 0
-  like(){
-    this.likes++
+  like(form: NgForm){
+
+
+    // validar q la data no este vacia
+    let data = form.value
+
+      if(data._id){
+        // actualizar
+        this.event.updateEvent(data).subscribe((data)=>{
+          alert("Evento actualizado")
+          this.getData()
+        })
+        this.cleanForm()
+        return
+      }
+     console.log( data.like)
+  }
+  cleanForm(){
+    this.event.eventToCreate = new Event()
   }
 
   addComment(){

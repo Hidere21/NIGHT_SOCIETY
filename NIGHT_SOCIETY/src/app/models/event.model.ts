@@ -6,6 +6,7 @@ export class Event{
     hour?: String
     images?: String
     description?: String
+    likes?: Number
     _id?:String
     opinions?: []
 
@@ -18,7 +19,9 @@ export class Event{
         images = "",
         description = "",
         _id= "",
-        opinions?: []        
+        opinions?: [],
+        likes = 0
+
          ){
             this.name = name;
             this.address = address;
@@ -29,6 +32,7 @@ export class Event{
             this.description = description
             this._id = _id;
             this.opinions = opinions
+            this.likes =likes
             }
 }
 
