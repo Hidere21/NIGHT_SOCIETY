@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-laddign-page',
   templateUrl: './laddign-page.component.html',
   styleUrls: ['./laddign-page.component.css']
+  // styleUrls: ['./laddign-page.component.css']
 })
 export class LaddignPageComponent {
 

@@ -17,6 +17,7 @@ import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { AmigosModule } from './routes/amigos/amigos.module';
 import { HttpClientModule } from '@angular/common/http';
 import { EstrellasComponent } from './components/estrellas/estrellas.component';
+import { ReactiveFormsModule } from '@angular/forms';
 import { LaddignPageComponent } from './routes/laddign-page/laddign-page.component';
 import { CardHomeComponent } from './components/card-home/card-home.component';
 import { LoginComponent } from './routes/login/login.component';
@@ -45,11 +46,19 @@ import { from } from 'rxjs';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+<<<<<<< HEAD
     AmigosModule
 
 
+=======
+    AmigosModule,
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+>>>>>>> 7f7f62e4d10cbecfde7ff7fb0e4aa2fbae81cd9b
   ],
-
   providers: [],
   bootstrap: [AppComponent],
 })
