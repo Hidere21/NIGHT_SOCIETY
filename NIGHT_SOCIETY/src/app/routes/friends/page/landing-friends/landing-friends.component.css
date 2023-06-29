@@ -1,0 +1,98 @@
+.header-container {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background: url("src/assets/img-friends/Fondo-NS.jpg") no-repeat center;
+    object-fit: cover;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.main__title {
+    color: #f5f5f5;
+    padding: 0px 32px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 4.375rem;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+}
+
+.main__paragraph {
+    max-width: 42rem;
+    text-align: center;
+    line-height: 40px;
+    padding: 0px 32px;
+    color: #f5f5f5;
+    font-weight: 300;
+    font-size: 2.25rem;
+}
+
+.button-container {
+    display: flex;
+    position: relative;
+    top: 5rem;
+    gap: 1.25rem;
+}
+
+.button-container__l {
+    display: inline-block;
+    padding: 20px 24px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #f5f5f5;
+    background-color: #190F40;
+    border-radius: 20px;
+    transition-duration: 200ms;
+}
+
+.button-container__l:hover {
+    background-color: #f5f5f5;
+    color: #190F40;
+    font-weight: 700;
+}
+
+span {
+    background-image: linear-gradient(to bottom, #f5f5f5, #571673);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+@keyframes fade-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-2rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-down {
+    animation: fade-down 1s both;
+}
+
+.animate-once {
+    animation-iteration-count: 1;
+}
+
+.animate-duration {
+    animation-duration: 3000ms;
+}
+.animate-duration-2 {
+    animation-duration: 4000ms;
+}
+
+/* --nightpurple: #571673; */

@@ -3,16 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { ContactSectionComponent } from './page/contact-section/contact-section.component';
 import { FriendsSuggestionComponent } from './page/friends-suggestion/friends-suggestion.component';
 import { ChatComponent } from './page/chat/chat.component';
-import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { LaddignPageComponent } from '../laddign-page/laddign-page.component';
 
 const routes: Routes = [
   {
     path: '',
     children: [
+      { path: 'landing-friends', component: LaddignPageComponent },
       { path: 'contact-section', component: ContactSectionComponent },
       { path: 'friends-suggestion', component: FriendsSuggestionComponent },
       { path: 'chat', component: ChatComponent },
-      { path: 'user-profile', component: UserProfileComponent },
     ],
   },
 ];

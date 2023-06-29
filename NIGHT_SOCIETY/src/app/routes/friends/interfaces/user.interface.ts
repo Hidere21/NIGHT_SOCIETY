@@ -5,6 +5,7 @@ export interface User {
   email: string;
   password: string;
   userImage: string;
+  studyOrWork: string;
   friends: string[];
   accounts: string[];
 }

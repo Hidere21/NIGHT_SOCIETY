@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'laddig', component: LaddignPageComponent },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
+  
   {
     path: 'friends',
     loadChildren: () =>
