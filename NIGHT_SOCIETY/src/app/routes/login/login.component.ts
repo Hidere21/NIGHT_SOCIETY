@@ -21,7 +21,7 @@ export class LoginComponent {
     this.user.login(data).subscribe({
       next: (data: any) => {
         localStorage.setItem('token', data.token);
-        console.log(this.router.navigate(['/home']));
+        console.log(this.router.navigate(['/perfil']));
       },
       error: (err: any) => {
         alert("Error al iniciar sesión");

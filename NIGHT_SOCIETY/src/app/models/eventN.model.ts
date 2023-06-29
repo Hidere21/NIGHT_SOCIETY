@@ -6,6 +6,7 @@ export class Event{
     hour?: String
     images?: String[]
     description?: String
+    likes?: Number
     _id?:String
     opinions?: []
     qualify?: []
@@ -19,8 +20,14 @@ export class Event{
         images = [],
         description = "",
         _id= "",
+<<<<<<< HEAD:NIGHT_SOCIETY/src/app/models/event.model.ts
+        opinions?: [],
+        likes = 0
+
+=======
         opinions?: [],    
         qualify?: []    
+>>>>>>> 7f7f62e4d10cbecfde7ff7fb0e4aa2fbae81cd9b:NIGHT_SOCIETY/src/app/models/eventN.model.ts
          ){
             this.name = name;
             this.address = address;
@@ -31,7 +38,12 @@ export class Event{
             this.description = description
             this._id = _id;
             this.opinions = opinions
+<<<<<<< HEAD:NIGHT_SOCIETY/src/app/models/event.model.ts
+            this.likes =likes
+            }
+=======
             this.qualify = qualify
           }
+>>>>>>> 7f7f62e4d10cbecfde7ff7fb0e4aa2fbae81cd9b:NIGHT_SOCIETY/src/app/models/eventN.model.ts
 }
 
